@@ -6,12 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "logos": "node scripts/make-logos-transparent.mjs",
+    "remotion": "remotion studio remotion/index.ts",
+    "render:banner": "remotion still remotion/index.ts LinkedInBanner out/linkedin-banner.png --image-format=png",
+    "render:j1": "remotion render remotion/index.ts J1-ScreenDemo out/j1-screen-demo.mp4",
+    "buffer:channels": "node scripts/buffer/list-channels.mjs",
+    "buffer:publish": "node scripts/buffer/publish.mjs"
   },
   "dependencies": {
+    "@remotion/cli": "4.0.484",
+    "@remotion/google-fonts": "4.0.484",
     "next": "16.2.10",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "remotion": "4.0.484"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
