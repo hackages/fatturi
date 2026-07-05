@@ -8,6 +8,7 @@ import {
   VIDEO_FPS,
   VIDEO_DURATION,
 } from "./J1ScreenDemo";
+import { CarouselSlide, CAROUSEL_W, CAROUSEL_H } from "./Carousel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -25,6 +26,13 @@ export const RemotionRoot: React.FC = () => {
         height={VIDEO_H}
         fps={VIDEO_FPS}
         durationInFrames={VIDEO_DURATION}
+      />
+      <Still
+        id="J1-Carousel"
+        component={CarouselSlide}
+        width={CAROUSEL_W}
+        height={CAROUSEL_H}
+        defaultProps={{ index: 0 }}
       />
     </>
   );

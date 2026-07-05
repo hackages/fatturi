@@ -39,4 +39,26 @@ Encaissé aujourd'hui, facturé aussitôt.
       thumbnail: "out/j1-thumbnail.png",
     },
   },
+
+  carousel: {
+    label: "J1 · Carrousel « chaîne cassée »",
+    text: `Votre chaîne de facturation a un maillon cassé. 🔗
+
+Vous encaissez en ligne en un clic… mais la facture, c'est encore à la main : export, copier-coller, PDF, envoi. Chaque vente. Chaque mois.
+
+Fatturi est le chaînon manquant : chaque paiement Stripe, PayPal ou Shopify devient une facture envoyée par email, automatiquement. Dès aujourd'hui, et prêt pour 2026.
+
+Faites glisser pour voir les 3 étapes 👉
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com
+
+#facturation #ecommerce #freelance #Stripe #facturationélectronique2026`,
+    images: [
+      { file: "public/campaign/j1-carousel-1.png" },
+      { file: "public/campaign/j1-carousel-2.png" },
+      { file: "public/campaign/j1-carousel-3.png" },
+      { file: "public/campaign/j1-carousel-4.png" },
+      { file: "public/campaign/j1-carousel-5.png" },
+    ],
+  },
 };

@@ -92,6 +92,11 @@ if (content.video) {
   const url = requireUrl(args["media-url"] || fileToUrl(content.video.file), "Cette vidéo");
   const thumbnailUrl = args["thumb-url"] || fileToUrl(content.video.thumbnail);
   assets.push({ video: { url, ...(thumbnailUrl ? { thumbnailUrl } : {}) } });
+} else if (content.images) {
+  content.images.forEach((img, i) => {
+    const url = requireUrl(fileToUrl(img.file), `L'image ${i + 1}`);
+    assets.push({ image: { url } });
+  });
 } else if (content.image) {
   const url = requireUrl(args["media-url"] || fileToUrl(content.image.file), "Cette image");
   assets.push({ image: { url } });
