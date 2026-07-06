@@ -1,4 +1,4 @@
-import { getOrganizations, getChannels, createPost, loadEnv } from "./client.mjs";
+import { getOrganizations, getChannels, createPost, editPost, loadEnv } from "./client.mjs";
 import { PLAN } from "../../campaign/plan.mjs";
 
 /*
@@ -40,7 +40,10 @@ if (!env.MEDIA_BASE_URL) {
   process.exit(1);
 }
 const MEDIA_BASE = env.MEDIA_BASE_URL.replace(/\/$/, "");
-const fileToUrl = (file) => `${MEDIA_BASE}/${file.split("/").pop()}`;
+// --bust=N ajoute ?v=N pour forcer Buffer à re-télécharger un média modifié
+// (Buffer met en cache par URL — cf. playbook).
+const BUST = args.bust ? `?v=${args.bust}` : "";
+const fileToUrl = (file) => `${MEDIA_BASE}/${file.split("/").pop()}${BUST}`;
 
 // Résolution des canaux.
 const account = await getOrganizations();
@@ -106,6 +109,42 @@ const buildInput = (post) => {
   }
   return { channel, dueAt, input };
 };
+
+// Mode édition : --edit=key=postId[,key=postId] met à jour des posts existants
+// (média + texte + horaire) sans en recréer. Utiliser --bust=N pour re-fetch média.
+if (args.edit) {
+  const pairs = String(args.edit)
+    .split(",")
+    .map((s) => s.trim())
+    .map((s) => s.split("="));
+  console.log(`\n═══════════════════════════════════════════════════`);
+  console.log(`Édition Fatturi — ${pairs.length} post(s) ${willSend ? "→ ENVOI" : "(dry-run)"}  bust=${args.bust || "—"}`);
+  console.log(`═══════════════════════════════════════════════════\n`);
+  for (const [key, postId] of pairs) {
+    const post = PLAN.find((p) => p.key === key);
+    if (!post) {
+      console.log(`✗ ${key} — introuvable dans le plan\n`);
+      continue;
+    }
+    const { input } = buildInput(post);
+    delete input.channelId; // EditPostInput n'accepte pas channelId
+    const editInput = { id: postId, ...input };
+    const media = editInput.assets.map((a) => (a.video ? `🎬 ${a.video.url}` : `🖼️  ${a.image.url}`)).join("\n              ");
+    console.log(`─── ${key} → ${postId} ───`);
+    console.log(`  Média : ${media}`);
+    if (!willSend) {
+      console.log("  (dry-run)\n");
+      continue;
+    }
+    try {
+      const updated = await editPost(editInput);
+      console.log(`  ✅ Mis à jour — ${updated.status} | ${updated.dueAt}\n`);
+    } catch (e) {
+      console.log(`  ✗ Échec : ${e.message}\n`);
+    }
+  }
+  process.exit(0);
+}
 
 console.log(`\n═══════════════════════════════════════════════════`);
 console.log(`Plan Fatturi — ${posts.length} post(s) ${willSend ? "→ ENVOI" : "(dry-run)"}`);

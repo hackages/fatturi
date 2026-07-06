@@ -94,6 +94,29 @@ export async function createPost(input) {
   return result.post;
 }
 
+export async function editPost(input) {
+  // EditPostInput n'a pas de channelId (il est lié au post) → { id, ...rest }.
+  const data = await gql(
+    `
+    mutation Edit($input: EditPostInput!) {
+      editPost(input: $input) {
+        __typename
+        ... on PostActionSuccess {
+          post { id status dueAt }
+        }
+        ... on MutationError { message }
+      }
+    }
+  `,
+    { input }
+  );
+  const result = data.editPost;
+  if (result.__typename !== "PostActionSuccess") {
+    throw new Error(`editPost a échoué : ${result.message || JSON.stringify(result)}`);
+  }
+  return result.post;
+}
+
 export async function getChannels(organizationId) {
   const data = await gql(
     `

@@ -271,7 +271,7 @@ Accès prioritaire → fatturi.com`,
     channel: "instagram",
     igType: "post",
     label: "J3 · Instagram · Card réforme 2026",
-    image: { file: "public/campaign/card-reform-2026.png" },
+    image: { file: "public/campaign/card-reform-2026-2.png" },
     text: withTags(
       `2026, ce n'est pas « pour les grosses boîtes ». 📌
 
