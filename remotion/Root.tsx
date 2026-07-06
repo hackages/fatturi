@@ -9,16 +9,18 @@ import {
   VIDEO_DURATION,
 } from "./J1ScreenDemo";
 import { CarouselSlide, CAROUSEL_W, CAROUSEL_H } from "./Carousel";
+import { GenericCarousel } from "./carousels/GenericCarousel";
+import { Card, CARD_W, CARD_H } from "./cards/Card";
+import { CounterReel, COUNTER_DURATION } from "./reels/CounterReel";
+import { MythsReel, MYTHS_DURATION } from "./reels/MythsReel";
+import { BeforeAfterReel, BEFOREAFTER_DURATION } from "./reels/BeforeAfterReel";
+import { REEL_W, REEL_H, REEL_FPS } from "./reels/shared";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Still
-        id="LinkedInBanner"
-        component={LinkedInBanner}
-        width={BANNER_W}
-        height={BANNER_H}
-      />
+      <Still id="LinkedInBanner" component={LinkedInBanner} width={BANNER_W} height={BANNER_H} />
+
       <Composition
         id="J1-ScreenDemo"
         component={J1ScreenDemo}
@@ -27,12 +29,45 @@ export const RemotionRoot: React.FC = () => {
         fps={VIDEO_FPS}
         durationInFrames={VIDEO_DURATION}
       />
+
+      <Still id="J1-Carousel" component={CarouselSlide} width={CAROUSEL_W} height={CAROUSEL_H} defaultProps={{ index: 0 }} />
+
+      {/* Carrousels data-driven (J2–J4) : deck = cost | myths | recap */}
       <Still
-        id="J1-Carousel"
-        component={CarouselSlide}
+        id="Carousel"
+        component={GenericCarousel}
         width={CAROUSEL_W}
         height={CAROUSEL_H}
-        defaultProps={{ index: 0 }}
+        defaultProps={{ deck: "cost", index: 0 }}
+      />
+
+      {/* Cards single-image (3e slot IG) */}
+      <Still id="Card" component={Card} width={CARD_W} height={CARD_H} defaultProps={{ id: "reform-2026" }} />
+
+      {/* Reels J2–J4 */}
+      <Composition
+        id="J2-CounterReel"
+        component={CounterReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={COUNTER_DURATION}
+      />
+      <Composition
+        id="J3-MythsReel"
+        component={MythsReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={MYTHS_DURATION}
+      />
+      <Composition
+        id="J4-BeforeAfterReel"
+        component={BeforeAfterReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={BEFOREAFTER_DURATION}
       />
     </>
   );

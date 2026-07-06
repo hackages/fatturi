@@ -12,7 +12,9 @@
     "render:banner": "remotion still remotion/index.ts LinkedInBanner out/linkedin-banner.png --image-format=png",
     "render:j1": "remotion render remotion/index.ts J1-ScreenDemo out/j1-screen-demo.mp4",
     "buffer:channels": "node scripts/buffer/list-channels.mjs",
-    "buffer:publish": "node scripts/buffer/publish.mjs"
+    "buffer:publish": "node scripts/buffer/publish.mjs",
+    "buffer:plan": "node scripts/buffer/schedule-plan.mjs",
+    "render:campaign": "node scripts/render-campaign.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
