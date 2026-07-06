@@ -16,7 +16,7 @@ export const CARDS: Record<string, CardData> = {
     kind: "stat",
     kicker: "Réforme e-invoicing",
     big: "2026",
-    sub: "La facturation électronique devient obligatoire pour les entreprises à la TVA. Fatturi vous met en règle, sans rien changer à vos habitudes.",
+    sub: "La facturation électronique devient obligatoire pour les entreprises assujetties à la TVA. Fatturi vous met en règle, sans rien changer à vos habitudes.",
   },
   "morning-invoiced": {
     kind: "quote",
