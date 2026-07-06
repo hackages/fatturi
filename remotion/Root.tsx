@@ -69,6 +69,32 @@ export const RemotionRoot: React.FC = () => {
         fps={REEL_FPS}
         durationInFrames={BEFOREAFTER_DURATION}
       />
+
+      {/* Variantes LinkedIn 4:5 (1080×1350) — mêmes scènes, format qui remplit le fil */}
+      <Composition
+        id="J2-CounterReel-LI"
+        component={CounterReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={COUNTER_DURATION}
+      />
+      <Composition
+        id="J3-MythsReel-LI"
+        component={MythsReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={MYTHS_DURATION}
+      />
+      <Composition
+        id="J4-BeforeAfterReel-LI"
+        component={BeforeAfterReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={BEFOREAFTER_DURATION}
+      />
     </>
   );
 };

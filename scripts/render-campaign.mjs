@@ -29,9 +29,20 @@ const CARDS = {
 };
 
 function renderReels() {
+  // 9:16 pour Instagram (Reels)
   video("J2-CounterReel", "j2-counter-reel.mp4");
   video("J3-MythsReel", "j3-myths-reel.mp4");
   video("J4-BeforeAfterReel", "j4-beforeafter-reel.mp4");
+  still("J2-CounterReel", "j2-counter-thumb.png", undefined);
+  still("J3-MythsReel", "j3-myths-thumb.png", undefined);
+  still("J4-BeforeAfterReel", "j4-beforeafter-thumb.png", undefined);
+  // 4:5 pour LinkedIn (remplit le fil)
+  video("J2-CounterReel-LI", "j2-counter-reel-li.mp4");
+  video("J3-MythsReel-LI", "j3-myths-reel-li.mp4");
+  video("J4-BeforeAfterReel-LI", "j4-beforeafter-reel-li.mp4");
+  still("J2-CounterReel-LI", "j2-counter-thumb-li.png", undefined);
+  still("J3-MythsReel-LI", "j3-myths-thumb-li.png", undefined);
+  still("J4-BeforeAfterReel-LI", "j4-beforeafter-thumb-li.png", undefined);
 }
 
 function renderCarousels() {

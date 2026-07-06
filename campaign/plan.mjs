@@ -54,8 +54,8 @@ Encaissé aujourd'hui, facturé aussitôt.
     day: "2026-07-07",
     time: "12:30",
     channel: "page",
-    label: "J2 · LinkedIn · Vidéo compteur",
-    video: { file: "public/campaign/j2-counter-reel.mp4", thumbnail: "public/campaign/j2-counter-thumb.png" },
+    label: "J2 · LinkedIn · Vidéo compteur (4:5)",
+    video: { file: "public/campaign/j2-counter-reel-li.mp4", thumbnail: "public/campaign/j2-counter-thumb-li.png" },
     text: withTags(
       `20 heures par mois. C'est ce que coûte la facturation manuelle à une boutique qui fait 300 ventes. 👇
 
@@ -185,8 +185,8 @@ Encaissé aujourd'hui, facturé aussitôt.
     day: "2026-07-08",
     time: "12:30",
     channel: "page",
-    label: "J3 · LinkedIn · Vidéo idées reçues",
-    video: { file: "public/campaign/j3-myths-reel.mp4", thumbnail: "public/campaign/j3-myths-thumb.png" },
+    label: "J3 · LinkedIn · Vidéo idées reçues (4:5)",
+    video: { file: "public/campaign/j3-myths-reel-li.mp4", thumbnail: "public/campaign/j3-myths-thumb-li.png" },
     text: withTags(
       `« Facturer, ça prend 2 minutes. » Vraiment ? 👇
 
@@ -318,8 +318,8 @@ Encaissé aujourd'hui, facturé aussitôt.
     day: "2026-07-09",
     time: "12:30",
     channel: "page",
-    label: "J4 · LinkedIn · Vidéo avant/après",
-    video: { file: "public/campaign/j4-beforeafter-reel.mp4", thumbnail: "public/campaign/j4-beforeafter-thumb.png" },
+    label: "J4 · LinkedIn · Vidéo avant/après (4:5)",
+    video: { file: "public/campaign/j4-beforeafter-reel-li.mp4", thumbnail: "public/campaign/j4-beforeafter-thumb-li.png" },
     text: withTags(
       `Votre facturation : avant / après Fatturi. 👇
 
