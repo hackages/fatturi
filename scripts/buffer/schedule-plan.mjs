@@ -57,7 +57,10 @@ const resolveChannel = (kind) => {
 let posts = PLAN;
 if (args.channel) posts = posts.filter((p) => p.channel === args.channel);
 if (args.day) posts = posts.filter((p) => p.day === args.day);
-if (args.only) posts = posts.filter((p) => p.key === args.only);
+if (args.only) {
+  const keys = String(args.only).split(",").map((s) => s.trim());
+  posts = posts.filter((p) => keys.includes(p.key));
+}
 
 if (!posts.length) {
   console.error("\n✗ Aucun post ne correspond aux filtres.\n");
@@ -93,10 +96,11 @@ const buildInput = (post) => {
     assets: buildAssets(post),
   };
   if (post.channel === "instagram") {
+    // shouldShareToFeed est requis (Boolean!) pour reel ET post côté Buffer.
     input.metadata = {
       instagram: {
         type: post.igType === "reel" ? "reel" : "post",
-        ...(post.igType === "reel" ? { shouldShareToFeed: true } : {}),
+        shouldShareToFeed: true,
       },
     };
   }
