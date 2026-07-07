@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
+/* ── Charte Fatturi (ex Seven Flow) ─────────────────────────────── */
+@theme {
+  --color-navy: #1a3a5c; /* Navy Profond — couleur principale */
+  --color-navy-deep: #132c46;
+  --color-gold: #c8952a; /* Or Ambre — accent & CTA */
+  --color-gold-soft: #e0b968;
+  --color-sage: #2e7d5e; /* Sauge Émeraude — conformité / succès */
+  --color-ivoire: #f5f2ec; /* Ivoire Chaud — fond clair */
+  --color-brume: #e8edf2; /* Brume Bleue — cartes neutres */
+  --color-encre: #0d0d0f; /* Encre — texte principal */
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-dm-mono);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfaf7;
+  --foreground: #16202b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-gold) 30%, transparent);
+  color: var(--color-navy-deep);
+}
+
+/* Texture pointillés de la charte (fond sombre) */
+.dotted {
+  background-image: radial-gradient(
+    rgba(232, 237, 242, 0.14) 1.4px,
+    transparent 1.5px
+  );
+  background-size: 26px 26px;
+}
+.dotted-ink {
+  background-image: radial-gradient(
+    rgba(26, 58, 92, 0.12) 1.4px,
+    transparent 1.5px
+  );
+  background-size: 24px 24px;
+}
+
+/* Corps d'article : rythme typographique lisible */
+.prose-fatturi {
+  font-size: 1.1875rem;
+  line-height: 1.75;
+  color: #2b3742;
+}
+.prose-fatturi > p {
+  margin-bottom: 1.4em;
+}
+.prose-fatturi > h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 800;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--color-navy-deep);
+  margin: 2.2rem 0 1rem;
+  letter-spacing: -0.01em;
+}
+.prose-fatturi > h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-navy-deep);
+  margin: 1.8rem 0 0.75rem;
+}
+.prose-fatturi > ul {
+  margin: 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+.prose-fatturi > ul li {
+  position: relative;
+  padding-left: 1.9rem;
+  margin-bottom: 0.7em;
+}
+.prose-fatturi > ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 2px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+}
+.prose-fatturi strong {
+  color: var(--color-navy-deep);
+  font-weight: 700;
+}
+.prose-fatturi a {
+  color: var(--color-sage);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
