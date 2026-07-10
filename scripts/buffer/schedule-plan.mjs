@@ -1,5 +1,6 @@
 import { getOrganizations, getChannels, createPost, editPost, loadEnv } from "./client.mjs";
 import { PLAN } from "../../campaign/plan.mjs";
+import { getDrive, upsertFile, collectVideos, localPathOf } from "../drive/client.mjs";
 
 /*
   Programme le plan J2–J4 (campaign/plan.mjs) sur Buffer
@@ -15,6 +16,9 @@ import { PLAN } from "../../campaign/plan.mjs";
     # Créer des BROUILLONS d'une journée (la manager valide dans Buffer)
     node scripts/buffer/schedule-plan.mjs --mode=draft --day=2026-07-07 --send
 
+    # Brouillons Buffer + upload des vidéos sur Google Drive en une commande
+    node scripts/buffer/schedule-plan.mjs --mode=draft --day=2026-07-07 --drive --send
+
     # Filtrer
     node scripts/buffer/schedule-plan.mjs --send --channel=instagram
     node scripts/buffer/schedule-plan.mjs --send --channel=tiktok
@@ -24,6 +28,7 @@ import { PLAN } from "../../campaign/plan.mjs";
   Options :
     --send            exécute réellement (sinon dry-run)
     --mode=schedule|draft   schedule = date fixe (défaut) ; draft = brouillon
+    --drive           publie aussi les vidéos sur Google Drive (voir scripts/drive)
     --channel=page|instagram|tiktok
     --day=YYYY-MM-DD
     --only=<key>
@@ -219,3 +224,31 @@ if (willSend) {
   console.log(`🟡 DRY-RUN — rien envoyé. Ajoute --send pour ${suite}.`);
 }
 console.log(`═══════════════════════════════════════════════════\n`);
+
+// --drive : publie aussi les vidéos des posts filtrés sur Google Drive
+// (dossier partagé) pour l'ajout manuel de musique + voix par la manager.
+if (args.drive) {
+  const videos = collectVideos(posts);
+  console.log(`─── Google Drive — ${videos.length} vidéo(s) ${willSend ? "→ UPLOAD" : "(dry-run)"} ───`);
+  if (!videos.length) {
+    console.log("  Aucune vidéo dans la sélection.\n");
+  } else if (!willSend) {
+    for (const v of videos) console.log(`  • ${v.name} (${v.keys.join(", ")})`);
+    console.log("");
+  } else {
+    try {
+      const { drive, folderId } = await getDrive();
+      for (const v of videos) {
+        try {
+          const res = await upsertFile(drive, folderId, localPathOf(v.file), v.name);
+          console.log(`  ✅ ${v.name} — ${res.updated ? "mis à jour" : "uploadé"} — ${res.link}`);
+        } catch (e) {
+          console.log(`  ✗ ${v.name} — ${e.message}`);
+        }
+      }
+    } catch (e) {
+      console.log(`  ✗ Drive indisponible : ${e.message}`);
+    }
+    console.log("");
+  }
+}

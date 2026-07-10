@@ -33,6 +33,12 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# google service account credentials (never commit)
+/secrets/
+*service-account*.json
+*gcp*.json
+gcp-*.json
+
 # confidentiel — charte graphique interne, ne pas publier
 /docs/
 
