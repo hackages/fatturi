@@ -99,7 +99,7 @@ export default async function ArticlePage({
 
       {/* Corps */}
       <article className="mx-auto max-w-3xl px-5 pt-12 sm:px-8">
-        <ArticleBody blocks={post.body} />
+        <ArticleBody content={post.content} />
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-black/[0.08] pt-8">
           <div className="flex items-center gap-3">
