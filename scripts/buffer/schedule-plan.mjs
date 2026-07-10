@@ -2,7 +2,8 @@ import { getOrganizations, getChannels, createPost, editPost, loadEnv } from "./
 import { PLAN } from "../../campaign/plan.mjs";
 
 /*
-  Programme le plan J2–J4 (campaign/plan.mjs) sur Buffer (LinkedIn Page + Instagram).
+  Programme le plan J2–J4 (campaign/plan.mjs) sur Buffer
+  (LinkedIn Page + Instagram + TikTok).
 
   Exemples :
     # Aperçu complet (n'envoie rien) — défaut
@@ -11,14 +12,19 @@ import { PLAN } from "../../campaign/plan.mjs";
     # Programmer tout
     node scripts/buffer/schedule-plan.mjs --send
 
+    # Créer des BROUILLONS d'une journée (la manager valide dans Buffer)
+    node scripts/buffer/schedule-plan.mjs --mode=draft --day=2026-07-07 --send
+
     # Filtrer
     node scripts/buffer/schedule-plan.mjs --send --channel=instagram
+    node scripts/buffer/schedule-plan.mjs --send --channel=tiktok
     node scripts/buffer/schedule-plan.mjs --send --day=2026-07-07
     node scripts/buffer/schedule-plan.mjs --send --only=j2-li-video
 
   Options :
     --send            exécute réellement (sinon dry-run)
-    --channel=page|instagram
+    --mode=schedule|draft   schedule = date fixe (défaut) ; draft = brouillon
+    --channel=page|instagram|tiktok
     --day=YYYY-MM-DD
     --only=<key>
     --tz=+02:00       offset horaire (défaut +02:00, Europe/Paris été)
@@ -34,6 +40,13 @@ const args = Object.fromEntries(
 const env = loadEnv();
 const TZ = args.tz || "+02:00";
 const willSend = Boolean(args.send);
+// --mode=schedule (défaut) programme à date fixe ; --mode=draft crée des
+// brouillons (saveToDraft) que la manager valide elle-même dans Buffer.
+const MODE = args.mode || "schedule";
+if (!["schedule", "draft"].includes(MODE)) {
+  console.error(`\n✗ --mode inconnu : ${MODE} (attendu: schedule | draft)\n`);
+  process.exit(1);
+}
 
 if (!env.MEDIA_BASE_URL) {
   console.error("\n✗ MEDIA_BASE_URL manquant dans .env.local (URL publique des médias).\n");
@@ -53,6 +66,7 @@ const channels = await getChannels(org.id);
 const resolveChannel = (kind) => {
   if (kind === "page") return channels.find((c) => c.service === "linkedin" && c.type === "page");
   if (kind === "instagram") return channels.find((c) => c.service === "instagram");
+  if (kind === "tiktok") return channels.find((c) => c.service === "tiktok");
   return null;
 };
 
@@ -72,14 +86,10 @@ if (!posts.length) {
 
 const buildAssets = (post) => {
   if (post.video) {
-    return [
-      {
-        video: {
-          url: fileToUrl(post.video.file),
-          ...(post.video.thumbnail ? { thumbnailUrl: fileToUrl(post.video.thumbnail) } : {}),
-        },
-      },
-    ];
+    // Buffer refuse les miniatures vidéo personnalisées (thumbnailUrl) : le réseau
+    // utilise la 1re image de la vidéo. Nos reels portent leur cover en frame 0,
+    // donc la miniature du grid reste correcte sans thumbnailUrl.
+    return [{ video: { url: fileToUrl(post.video.file) } }];
   }
   if (post.images) return post.images.map((img) => ({ image: { url: fileToUrl(img.file) } }));
   if (post.image) return [{ image: { url: fileToUrl(post.image.file) } }];
@@ -94,10 +104,16 @@ const buildInput = (post) => {
     channelId: channel.id,
     text: post.text,
     schedulingType: "automatic",
-    mode: "customScheduled",
-    dueAt,
     assets: buildAssets(post),
   };
+  if (MODE === "draft") {
+    // Brouillon Buffer : la manager valide/planifie ensuite dans l'app.
+    input.saveToDraft = true;
+    input.mode = "addToQueue";
+  } else {
+    input.mode = "customScheduled";
+    input.dueAt = dueAt;
+  }
   if (post.channel === "instagram") {
     // shouldShareToFeed est requis (Boolean!) pour reel ET post côté Buffer.
     input.metadata = {
@@ -106,6 +122,9 @@ const buildInput = (post) => {
         shouldShareToFeed: true,
       },
     };
+  } else if (post.channel === "tiktok" && post.ttTitle) {
+    // TikTokPostMetadataInput : title/isAiGenerated, tous optionnels.
+    input.metadata = { tiktok: { title: post.ttTitle } };
   }
   return { channel, dueAt, input };
 };
@@ -147,7 +166,7 @@ if (args.edit) {
 }
 
 console.log(`\n═══════════════════════════════════════════════════`);
-console.log(`Plan Fatturi — ${posts.length} post(s) ${willSend ? "→ ENVOI" : "(dry-run)"}`);
+console.log(`Plan Fatturi — ${posts.length} post(s) · mode=${MODE} ${willSend ? "→ ENVOI" : "(dry-run)"}`);
 console.log(`Organisation : ${org.name} (${org.id})`);
 console.log(`═══════════════════════════════════════════════════\n`);
 
@@ -171,7 +190,7 @@ for (const post of posts) {
   console.log(`─── ${post.key} ───────────────────────────────`);
   console.log(`  ${post.label}`);
   console.log(`  Canal   : ${channel.descriptor} (${channel.service}/${channel.type || channel.service})`);
-  console.log(`  Quand   : ${dueAt}`);
+  console.log(`  Quand   : ${MODE === "draft" ? "brouillon (à valider dans Buffer)" : dueAt}`);
   if (input.metadata) console.log(`  IG type : ${input.metadata.instagram.type}`);
   console.log(`  Média   : ${media}`);
   console.log(`  Texte   : ${post.text.split("\n")[0]} …`);
@@ -193,8 +212,10 @@ for (const post of posts) {
 
 console.log(`═══════════════════════════════════════════════════`);
 if (willSend) {
-  console.log(`Terminé : ${ok} programmé(s), ${ko} échec(s).`);
+  const verbe = MODE === "draft" ? "brouillon(s) créé(s)" : "programmé(s)";
+  console.log(`Terminé : ${ok} ${verbe}, ${ko} échec(s).`);
 } else {
-  console.log(`🟡 DRY-RUN — rien envoyé. Ajoute --send pour programmer.`);
+  const suite = MODE === "draft" ? "créer les brouillons" : "programmer";
+  console.log(`🟡 DRY-RUN — rien envoyé. Ajoute --send pour ${suite}.`);
 }
 console.log(`═══════════════════════════════════════════════════\n`);

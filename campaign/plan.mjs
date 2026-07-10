@@ -17,6 +17,9 @@ const TAGS_LI =
 const TAGS_IG =
   "#facturation #ecommerce #entrepreneur #freelance #stripe #shopify #paypal #autoentrepreneur #comptabilité #facturationélectronique #vendreenligne #ecommercefrance #business2026";
 
+const TAGS_TT =
+  "#facturation #ecommerce #entrepreneur #freelance #stripe #shopify #autoentrepreneur #facturationélectronique #vendreenligne #business2026 #pourtoi";
+
 // Ajoute le bloc hashtags façon playbook (séparateur « . » sur sa propre ligne).
 const withTags = (body, tags) => `${body}\n.\n${tags}`;
 
@@ -150,6 +153,41 @@ Fatturi le remplace : la vente encaissée devient une facture PDF envoyée par e
 Encaissé le matin, facturé avant midi.
 Accès prioritaire → fatturi.com`,
       TAGS_IG
+    ),
+  },
+
+  {
+    key: "j2-tt-reel",
+    day: "2026-07-07",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J2 · TikTok · Reel compteur",
+    video: { file: "public/campaign/j2-counter-reel.mp4", thumbnail: "public/campaign/j2-counter-thumb.png" },
+    text: withTags(
+      `20 heures. Par mois. Juste pour recopier des factures. ⏱️
+
+Une boutique à 300 ventes/mois y passe 3 jours de travail par an. Avec Fatturi : 0.
+
+Chaque vente Stripe, PayPal ou Shopify → une facture envoyée automatiquement. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j2-tt-reel-concept",
+    day: "2026-07-07",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J2 · TikTok · Reel concept (réutilisation J1)",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Entre ton paiement et ta facture, il manque un maillon. 🔗
+
+Fatturi le remplace : la vente encaissée devient une facture PDF envoyée par email à ton client. Automatiquement.
+
+Encaissé le matin, facturé avant midi.
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
     ),
   },
 
