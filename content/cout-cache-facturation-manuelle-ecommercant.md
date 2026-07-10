@@ -16,7 +16,7 @@ Prenons une boutique qui réalise **300 ventes par mois**. Comptez environ 4 min
 
 ## Les coûts qu'on ne voit pas
 
-- Les erreurs : une TVA fausse, un montant erroné, une mention légale oubliée — et il faut corriger, parfois en série.
+- Les erreurs : une TVA erronée, un montant erroné, une mention légale oubliée — et il faut corriger, parfois en série.
 - La charge mentale : penser à facturer, relancer, ne rien oublier, en plus de faire tourner la boutique.
 - Le manque à gagner : ces heures ne sont ni vendues, ni consacrées à votre croissance.
 
