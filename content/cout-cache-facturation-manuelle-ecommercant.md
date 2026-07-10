@@ -1,6 +1,6 @@
 ---
 title: "Le coût caché de la facturation manuelle pour un e-commerçant"
-excerpt: "Facturer à la main ne coûte pas 4 minutes, mais des dizaines d'heures par mois — sans compter les erreurs et la charge mentale. Faisons le calcul."
+excerpt: "Facturer à la main ne prend pas 4 minutes, mais des dizaines d'heures par mois — sans compter les erreurs et la charge mentale. Faisons le calcul."
 category: ecommerce
 date: "2026-05-10"
 author: Arielle Toghau
