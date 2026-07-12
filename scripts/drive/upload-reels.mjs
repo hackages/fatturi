@@ -1,4 +1,4 @@
-import { PLAN } from "../../campaign/plan.mjs";
+import { PLAN, VIDEO_LABELS } from "../../campaign/plan.mjs";
 import { getDrive, upsertFile, collectVideos, localPathOf } from "./client.mjs";
 
 /*
@@ -45,7 +45,7 @@ if (args.only) {
   posts = posts.filter((p) => keys.includes(p.key));
 }
 
-const videos = collectVideos(posts);
+const videos = collectVideos(posts, VIDEO_LABELS);
 
 console.log(`\n═══════════════════════════════════════════════════`);
 console.log(`Drive Fatturi — ${videos.length} vidéo(s) ${willSend ? "→ UPLOAD" : "(dry-run)"}`);
@@ -57,7 +57,7 @@ if (!videos.length) {
 }
 
 for (const v of videos) {
-  console.log(`─── ${v.name} ───`);
+  console.log(`─── ${v.displayName} ───`);
   console.log(`  Posts   : ${v.keys.join(", ")}`);
   console.log(`  Source  : ${v.file}`);
 }
@@ -80,11 +80,14 @@ let ok = 0;
 let ko = 0;
 for (const v of videos) {
   try {
-    const res = await upsertFile(drive, folderId, localPathOf(v.file), v.name);
-    console.log(`✅ ${v.name} — ${res.updated ? "mis à jour" : "uploadé"} — ${res.link}`);
+    const res = await upsertFile(drive, folderId, localPathOf(v.file), {
+      sourceKey: v.name,
+      displayName: v.displayName,
+    });
+    console.log(`✅ ${v.displayName} — ${res.updated ? "mis à jour" : "uploadé"} — ${res.link}`);
     ok++;
   } catch (e) {
-    console.log(`✗ ${v.name} — ${e.message}`);
+    console.log(`✗ ${v.displayName} — ${e.message}`);
     ko++;
   }
 }

@@ -68,13 +68,16 @@ export async function getDrive() {
 
 // Crée le fichier s'il n'existe pas dans le dossier, sinon met à jour son
 // contenu (nouvelle révision) — idempotent, pas de doublon en cas de re-run.
-export async function upsertFile(drive, folderId, localPath, name) {
+// L'identité stable est appProperties.fatturiSource (nom de fichier source),
+// pas le nom affiché : on peut donc renommer sans casser l'idempotence.
+export async function upsertFile(drive, folderId, localPath, { sourceKey, displayName }) {
   if (!fs.existsSync(localPath)) throw new Error(`Média local introuvable : ${localPath}`);
+  const name = displayName || sourceKey;
   const mimeType = mimeOf(localPath);
   const media = { mimeType, body: fs.createReadStream(localPath) };
 
   const existing = await drive.files.list({
-    q: `name = '${name.replace(/'/g, "\\'")}' and '${folderId}' in parents and trashed = false`,
+    q: `appProperties has { key='fatturiSource' and value='${sourceKey.replace(/'/g, "\\'")}' } and '${folderId}' in parents and trashed = false`,
     fields: "files(id, name)",
     supportsAllDrives: true,
     includeItemsFromAllDrives: true,
@@ -85,6 +88,7 @@ export async function upsertFile(drive, folderId, localPath, name) {
       const fileId = existing.data.files[0].id;
       const res = await drive.files.update({
         fileId,
+        requestBody: { name },
         media,
         fields: "id, webViewLink",
         supportsAllDrives: true,
@@ -92,7 +96,7 @@ export async function upsertFile(drive, folderId, localPath, name) {
       return { id: res.data.id, link: res.data.webViewLink, updated: true };
     }
     const res = await drive.files.create({
-      requestBody: { name, parents: [folderId] },
+      requestBody: { name, parents: [folderId], appProperties: { fatturiSource: sourceKey } },
       media,
       fields: "id, webViewLink",
       supportsAllDrives: true,
@@ -113,12 +117,22 @@ export async function upsertFile(drive, folderId, localPath, name) {
 }
 
 // Dédoublonne les vidéos référencées par une liste de posts du plan.
-export function collectVideos(posts) {
+// `labels` (facultatif) mappe nom de fichier → nom lisible pour Drive.
+export function collectVideos(posts, labels = {}) {
   const byName = new Map();
   for (const p of posts) {
     if (!p.video?.file) continue;
     const name = p.video.file.split("/").pop();
-    if (!byName.has(name)) byName.set(name, { name, file: p.video.file, keys: [] });
+    if (!byName.has(name)) {
+      const title = labels[name];
+      const ext = name.slice(name.lastIndexOf("."));
+      byName.set(name, {
+        name, // clé source stable (= appProperties.fatturiSource)
+        file: p.video.file,
+        keys: [],
+        displayName: title ? `${title}${ext}` : name,
+      });
+    }
     byName.get(name).keys.push(p.key);
   }
   return [...byName.values()];

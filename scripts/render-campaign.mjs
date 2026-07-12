@@ -21,32 +21,49 @@ const CAROUSELS = {
   "j2-cost": "cost",
   "j3-myths": "myths",
   "j4-recap": "recap",
+  "j5-concerned": "concerned",
+  "j6-channels": "channels",
+  "j7-objections": "objections",
 };
 
 const CARDS = {
   "card-reform-2026": "reform-2026",
   "card-morning-invoiced": "morning-invoiced",
+  "card-autoentrepreneur": "autoentrepreneur",
+  "card-pdp-security": "pdp-security",
 };
 
+// [id de composition, base du fichier de sortie] — 9:16 (IG/TikTok) + 4:5 (LinkedIn).
+const REELS = [
+  ["J2-CounterReel", "j2-counter"],
+  ["J3-MythsReel", "j3-myths"],
+  ["J4-BeforeAfterReel", "j4-beforeafter"],
+  ["J5-ConcernedReel", "j5-concerned"],
+  ["J6-ChannelsReel", "j6-channels"],
+  ["J7-FormatReel", "j7-format"],
+];
+
+// Filtre optionnel par jour(s) : `... reels j5 j6` ne rend que ce qui commence
+// par « j5 »/« j6 ». Sans filtre, tout est rendu.
+const DAY_FILTERS = process.argv.slice(3).map((s) => s.toLowerCase());
+const keep = (base) =>
+  DAY_FILTERS.length === 0 || DAY_FILTERS.some((d) => base.toLowerCase().includes(d));
+
 function renderReels() {
-  // 9:16 pour Instagram (Reels)
-  video("J2-CounterReel", "j2-counter-reel.mp4");
-  video("J3-MythsReel", "j3-myths-reel.mp4");
-  video("J4-BeforeAfterReel", "j4-beforeafter-reel.mp4");
-  still("J2-CounterReel", "j2-counter-thumb.png", undefined);
-  still("J3-MythsReel", "j3-myths-thumb.png", undefined);
-  still("J4-BeforeAfterReel", "j4-beforeafter-thumb.png", undefined);
-  // 4:5 pour LinkedIn (remplit le fil)
-  video("J2-CounterReel-LI", "j2-counter-reel-li.mp4");
-  video("J3-MythsReel-LI", "j3-myths-reel-li.mp4");
-  video("J4-BeforeAfterReel-LI", "j4-beforeafter-reel-li.mp4");
-  still("J2-CounterReel-LI", "j2-counter-thumb-li.png", undefined);
-  still("J3-MythsReel-LI", "j3-myths-thumb-li.png", undefined);
-  still("J4-BeforeAfterReel-LI", "j4-beforeafter-thumb-li.png", undefined);
+  for (const [comp, base] of REELS) {
+    if (!keep(base)) continue;
+    // 9:16 pour Instagram (Reels) + TikTok
+    video(comp, `${base}-reel.mp4`);
+    still(comp, `${base}-thumb.png`, undefined);
+    // 4:5 pour LinkedIn (remplit le fil)
+    video(`${comp}-LI`, `${base}-reel-li.mp4`);
+    still(`${comp}-LI`, `${base}-thumb-li.png`, undefined);
+  }
 }
 
 function renderCarousels() {
   for (const [prefix, deck] of Object.entries(CAROUSELS)) {
+    if (!keep(prefix)) continue;
     for (let i = 0; i < 5; i++) {
       still("Carousel", `${prefix}-${i + 1}.png`, { deck, index: i });
     }
@@ -54,6 +71,7 @@ function renderCarousels() {
 }
 
 function renderCards() {
+  // Cartes = stills rapides ; on les rend toutes (noms non préfixés par jour).
   for (const [file, id] of Object.entries(CARDS)) {
     still("Card", `${file}.png`, { id });
   }

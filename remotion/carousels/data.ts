@@ -57,6 +57,93 @@ export const DECKS: Record<string, Slide[]> = {
     },
   ],
 
+  // ───────── J5 · « Suis-je concerné ? » ─────────
+  concerned: [
+    { kind: "cover", kicker: "Suis-je concerné ?", title: "La réforme 2026 : concerné, ou pas ?" },
+    {
+      kind: "point",
+      n: 1,
+      kicker: "Réception",
+      title: "Obligatoire pour tous",
+      body: "Dès le 1er sept. 2026, toute entreprise — même micro, même sans TVA — doit pouvoir recevoir ses factures en électronique.",
+    },
+    {
+      kind: "point",
+      n: 2,
+      kicker: "Émission",
+      title: "Selon votre taille",
+      body: "TPE, micro-entreprises et auto-entrepreneurs émettent leurs factures B2B en électronique à partir du 1er sept. 2027.",
+    },
+    {
+      kind: "point",
+      n: 3,
+      kicker: "Peu importe le CA",
+      title: "Même à 0 €",
+      body: "Le niveau de chiffre d'affaires n'exonère de rien. Auto-entrepreneur, petit volume : vous êtes concerné.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi vous met en règle.",
+      body: "Vous branchez vos paiements ; la conformité 2026-2027 suit, sans migration dans l'urgence.",
+    },
+  ],
+
+  // ───────── J6 · Vendre en ligne / plateformes ─────────
+  channels: [
+    { kind: "cover", kicker: "Vendre en ligne", title: "Qui facture quoi, selon votre canal ?" },
+    {
+      kind: "point",
+      n: 1,
+      kicker: "Clients particuliers",
+      title: "B2C = e-reporting",
+      body: "Pas de facture électronique vers un particulier, mais les données de vos encaissements doivent être transmises.",
+    },
+    {
+      kind: "point",
+      n: 2,
+      kicker: "Marketplaces",
+      title: "Amazon, Uber, Vinted…",
+      body: "La plateforme peut facturer pour vous, mais votre e-reporting — et vos ventes hors plateforme — restent à votre charge.",
+    },
+    {
+      kind: "point",
+      n: 3,
+      kicker: "Vente directe",
+      title: "Stripe · PayPal · Shopify",
+      body: "Chaque encaissement devient une facture conforme, prête pour le e-reporting.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi centralise tout.",
+      body: "Un seul outil pour vos factures et vos données, quel que soit le canal de vente.",
+    },
+  ],
+
+  // ───────── J7 · Objections (outil / format / sécurité / coût) ─────────
+  objections: [
+    { kind: "cover", kicker: "Idées reçues", title: "Ce qu'on croit sur la facture électronique." },
+    {
+      kind: "myth",
+      myth: "« Ma facture par email, c'est déjà électronique. »",
+      reality: "Non : il faut un format structuré (Factur-X = PDF lisible + données XML).",
+    },
+    {
+      kind: "myth",
+      myth: "« Ces plateformes vont se faire pirater. »",
+      reality: "Les PDP sont certifiées par l'État : sécurité et chiffrement obligatoires.",
+    },
+    {
+      kind: "myth",
+      myth: "« Encore un abonnement pour rien. »",
+      reality: "Le temps de saisie coûte plus cher ; Fatturi automatise, le portail public couvre le minimum.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi, prêt et conforme.",
+      body: "Vos factures partent via une plateforme agréée. Sécurisé, automatique, sans y penser.",
+    },
+  ],
+
   recap: [
     { kind: "cover", kicker: "Avant / Après", title: "Pourquoi les e-commerçants passent à Fatturi." },
     {

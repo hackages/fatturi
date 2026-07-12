@@ -14,6 +14,9 @@ import { Card, CARD_W, CARD_H } from "./cards/Card";
 import { CounterReel, COUNTER_DURATION } from "./reels/CounterReel";
 import { MythsReel, MYTHS_DURATION } from "./reels/MythsReel";
 import { BeforeAfterReel, BEFOREAFTER_DURATION } from "./reels/BeforeAfterReel";
+import { ConcernedReel, CONCERNED_DURATION } from "./reels/ConcernedReel";
+import { ChannelsReel, CHANNELS_DURATION } from "./reels/ChannelsReel";
+import { FormatReel, FORMAT_DURATION } from "./reels/FormatReel";
 import { REEL_W, REEL_H, REEL_FPS } from "./reels/shared";
 
 export const RemotionRoot: React.FC = () => {
@@ -94,6 +97,58 @@ export const RemotionRoot: React.FC = () => {
         height={1350}
         fps={REEL_FPS}
         durationInFrames={BEFOREAFTER_DURATION}
+      />
+
+      {/* Reels J5–J7 (9:16) */}
+      <Composition
+        id="J5-ConcernedReel"
+        component={ConcernedReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={CONCERNED_DURATION}
+      />
+      <Composition
+        id="J6-ChannelsReel"
+        component={ChannelsReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={CHANNELS_DURATION}
+      />
+      <Composition
+        id="J7-FormatReel"
+        component={FormatReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={FORMAT_DURATION}
+      />
+
+      {/* Variantes LinkedIn 4:5 (J5–J7) */}
+      <Composition
+        id="J5-ConcernedReel-LI"
+        component={ConcernedReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={CONCERNED_DURATION}
+      />
+      <Composition
+        id="J6-ChannelsReel-LI"
+        component={ChannelsReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={CHANNELS_DURATION}
+      />
+      <Composition
+        id="J7-FormatReel-LI"
+        component={FormatReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={FORMAT_DURATION}
       />
     </>
   );

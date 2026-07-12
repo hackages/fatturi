@@ -24,6 +24,18 @@ export const CARDS: Record<string, CardData> = {
     quote: "Encaissé le matin, facturé avant midi.",
     sub: "Sans y penser. Chaque vente devient une facture envoyée automatiquement.",
   },
+  "autoentrepreneur": {
+    kind: "quote",
+    kicker: "Auto-entrepreneur ?",
+    quote: "Concerné, vous aussi.",
+    sub: "Réception dès 2026, émission dès 2027. Le montant de votre CA n'y change rien.",
+  },
+  "pdp-security": {
+    kind: "quote",
+    kicker: "Sécurité",
+    quote: "Une plateforme agréée par l'État.",
+    sub: "Données chiffrées, plateforme certifiée. Fatturi s'appuie sur une PDP agréée pour envoyer vos factures.",
+  },
 };
 
 const Bg: React.FC = () => (

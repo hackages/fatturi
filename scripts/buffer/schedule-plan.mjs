@@ -1,5 +1,5 @@
 import { getOrganizations, getChannels, createPost, editPost, loadEnv } from "./client.mjs";
-import { PLAN } from "../../campaign/plan.mjs";
+import { PLAN, VIDEO_LABELS } from "../../campaign/plan.mjs";
 import { getDrive, upsertFile, collectVideos, localPathOf } from "../drive/client.mjs";
 
 /*
@@ -228,22 +228,25 @@ console.log(`══════════════════════�
 // --drive : publie aussi les vidéos des posts filtrés sur Google Drive
 // (dossier partagé) pour l'ajout manuel de musique + voix par la manager.
 if (args.drive) {
-  const videos = collectVideos(posts);
+  const videos = collectVideos(posts, VIDEO_LABELS);
   console.log(`─── Google Drive — ${videos.length} vidéo(s) ${willSend ? "→ UPLOAD" : "(dry-run)"} ───`);
   if (!videos.length) {
     console.log("  Aucune vidéo dans la sélection.\n");
   } else if (!willSend) {
-    for (const v of videos) console.log(`  • ${v.name} (${v.keys.join(", ")})`);
+    for (const v of videos) console.log(`  • ${v.displayName} (${v.keys.join(", ")})`);
     console.log("");
   } else {
     try {
       const { drive, folderId } = await getDrive();
       for (const v of videos) {
         try {
-          const res = await upsertFile(drive, folderId, localPathOf(v.file), v.name);
-          console.log(`  ✅ ${v.name} — ${res.updated ? "mis à jour" : "uploadé"} — ${res.link}`);
+          const res = await upsertFile(drive, folderId, localPathOf(v.file), {
+            sourceKey: v.name,
+            displayName: v.displayName,
+          });
+          console.log(`  ✅ ${v.displayName} — ${res.updated ? "mis à jour" : "uploadé"} — ${res.link}`);
         } catch (e) {
-          console.log(`  ✗ ${v.name} — ${e.message}`);
+          console.log(`  ✗ ${v.displayName} — ${e.message}`);
         }
       }
     } catch (e) {
