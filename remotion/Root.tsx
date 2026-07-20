@@ -17,6 +17,7 @@ import { BeforeAfterReel, BEFOREAFTER_DURATION } from "./reels/BeforeAfterReel";
 import { ConcernedReel, CONCERNED_DURATION } from "./reels/ConcernedReel";
 import { ChannelsReel, CHANNELS_DURATION } from "./reels/ChannelsReel";
 import { FormatReel, FORMAT_DURATION } from "./reels/FormatReel";
+import { B2cReel, B2C_DURATION } from "./reels/B2cReel";
 import { REEL_W, REEL_H, REEL_FPS } from "./reels/shared";
 
 export const RemotionRoot: React.FC = () => {
@@ -149,6 +150,24 @@ export const RemotionRoot: React.FC = () => {
         height={1350}
         fps={REEL_FPS}
         durationInFrames={FORMAT_DURATION}
+      />
+
+      {/* Reel J11 · B2C / particuliers (VO + musique) */}
+      <Composition
+        id="J11-B2cReel"
+        component={B2cReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={B2C_DURATION}
+      />
+      <Composition
+        id="J11-B2cReel-LI"
+        component={B2cReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={B2C_DURATION}
       />
     </>
   );

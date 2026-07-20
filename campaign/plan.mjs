@@ -1,8 +1,14 @@
-// Plan de contenu J2–J7 — LinkedIn Page (Fatturi) + Instagram + TikTok.
+// Plan de contenu J2–J10 — LinkedIn Page (Fatturi) + Instagram + TikTok.
 // Angles J2–J4 : « coût caché » (J2), « idées reçues » (J3), « avant / après » (J4).
 // Angles J5–J7 (basés sur les vraies questions clients — docs/questions.txt) :
 // « Suis-je concerné ? » (J5), « Vendre en ligne / plateformes » (J6),
 // « Objections : format, sécurité, coût » (J7). Cible : e-commerçants / indépendants.
+// Angles J8–J10 (tirés du plan SEO — docs/seo-content-plan.mdx) : « À partir de
+// quand ? / calendrier » (J8), « Combien ça coûte vraiment ? » (J9), « Avant /
+// après : la solution » (J10). Ces trois jours réutilisent les visuels déjà
+// hébergés (jsDelivr) avec une copie neuve, pour refaire le plein de la file.
+// Angle J11 : « Clients particuliers / B2C + e-reporting » — reel avec VO
+// ElevenLabs (voix féminine FR) + musique acoustique chaude.
 //
 // Convention playbook :
 //   - Le premier commentaire Buffer est payant → les hashtags sont dans le texte,
@@ -41,6 +47,8 @@ export const VIDEO_LABELS = {
   "j6-channels-reel.mp4": "J6 · Vendre en ligne — Reel (Instagram · TikTok, 9:16)",
   "j7-format-reel-li.mp4": "J7 · PDF ≠ e-facture — Vidéo (LinkedIn 4:5)",
   "j7-format-reel.mp4": "J7 · PDF ≠ e-facture — Reel (Instagram · TikTok, 9:16)",
+  "j11-b2c-reel-li.mp4": "J11 · Clients particuliers / B2C — Vidéo (LinkedIn 4:5, VO + musique)",
+  "j11-b2c-reel.mp4": "J11 · Clients particuliers / B2C — Reel (Instagram · TikTok, 9:16, VO + musique)",
   "j1-screen-demo.mp4": "Concept · Démo produit (Instagram · TikTok, 9:16)",
 };
 
@@ -962,6 +970,664 @@ Accès prioritaire → fatturi.com`,
       `La conformité 2026 sans lever le petit doigt. 🔗
 
 Tu branches tes paiements une fois — Fatturi génère et envoie tes factures au bon format, automatiquement.
+
+Encaissé le matin, facturé avant midi.
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J8 · À partir de quand ? (calendrier) ───────────────────────
+  {
+    key: "j8-li-text",
+    day: "2026-07-16",
+    time: "08:30",
+    channel: "page",
+    label: "J8 · LinkedIn · Post texte (calendrier / dates)",
+    text: withTags(
+      `« On verra ça en 2027. » Peut-être. Mais pas pour tout le monde, et pas pour tout.
+
+Le calendrier de la facturation électronique tient en deux dates à ne pas confondre :
+
+📅 1er septembre 2026 — RÉCEPTION
+Toutes les entreprises doivent être capables de recevoir une facture électronique. Sans exception : micro, auto-entrepreneur, franchise en base de TVA. Il suffit qu'un seul de vos fournisseurs bascule pour que vous deviez pouvoir la recevoir.
+
+📅 1er septembre 2027 — ÉMISSION + e-reporting
+Les TPE, micro-entreprises et auto-entrepreneurs doivent émettre leurs factures B2B au format électronique et transmettre leurs données de vente.
+
+Autrement dit : même si votre obligation d'émettre tombe en 2027, celle de recevoir arrive dès 2026. Attendre le dernier moment, c'est prendre le risque de tout gérer dans l'urgence.
+
+Fatturi vous prépare dès maintenant : vos paiements branchés une fois, vos factures prêtes le jour J.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j8-li-video",
+    day: "2026-07-16",
+    time: "12:30",
+    channel: "page",
+    label: "J8 · LinkedIn · Vidéo calendrier (4:5, réutilisation J5)",
+    video: { file: "public/campaign/j5-concerned-reel-li.mp4", thumbnail: "public/campaign/j5-concerned-thumb-li.png" },
+    text: withTags(
+      `2026 ou 2027 : à partir de quand, pour vous ? 👇
+
+Réception pour toutes les entreprises dès septembre 2026, émission pour les TPE et indépendants en 2027. On résume le calendrier en 15 secondes.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j8-li-carousel",
+    day: "2026-07-16",
+    time: "19:00",
+    channel: "page",
+    label: "J8 · LinkedIn · Carrousel calendrier (réutilisation J5)",
+    images: [
+      { file: "public/campaign/j5-concerned-1.png" },
+      { file: "public/campaign/j5-concerned-2.png" },
+      { file: "public/campaign/j5-concerned-3.png" },
+      { file: "public/campaign/j5-concerned-4.png" },
+      { file: "public/campaign/j5-concerned-5.png" },
+    ],
+    text: withTags(
+      `Le calendrier de la réforme, en clair. 🔗
+
+Deux dates, deux obligations à ne pas confondre. Faites glisser pour savoir ce qui s'applique à vous — et quand.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+
+  {
+    key: "j8-ig-carousel",
+    day: "2026-07-16",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J8 · Instagram · Carrousel calendrier (réutilisation J5)",
+    images: [
+      { file: "public/campaign/j5-concerned-1.png" },
+      { file: "public/campaign/j5-concerned-2.png" },
+      { file: "public/campaign/j5-concerned-3.png" },
+      { file: "public/campaign/j5-concerned-4.png" },
+      { file: "public/campaign/j5-concerned-5.png" },
+    ],
+    text: withTags(
+      `2026 ? 2027 ? Ça tombe quand pour toi ? 📅
+
+Deux dates à retenir, et elles ne veulent pas dire la même chose. Swipe pour t'y retrouver 👉
+
+Fatturi te prépare dès maintenant.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j8-ig-reel",
+    day: "2026-07-16",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J8 · Instagram · Reel calendrier (réutilisation J5)",
+    video: { file: "public/campaign/j5-concerned-reel.mp4", thumbnail: "public/campaign/j5-concerned-thumb.png" },
+    text: withTags(
+      `« Je verrai ça en 2027. » 😅 Sauf que la réception, c'est dès 2026.
+
+Le calendrier de la réforme en 15 secondes.
+
+Fatturi te met en règle sans que tu y penses. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j8-ig-card",
+    day: "2026-07-16",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J8 · Instagram · Card réforme 2026",
+    image: { file: "public/campaign/card-reform-2026.png" },
+    text: withTags(
+      `Deux dates à noter dans ton agenda. 📌
+
+Réception : septembre 2026. Émission + e-reporting : septembre 2027 pour les indépendants.
+
+Prends de l'avance sans stress avec Fatturi.
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+
+  {
+    key: "j8-tt-reel",
+    day: "2026-07-16",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J8 · TikTok · Reel calendrier (réutilisation J5)",
+    video: { file: "public/campaign/j5-concerned-reel.mp4", thumbnail: "public/campaign/j5-concerned-thumb.png" },
+    text: withTags(
+      `POV : tu penses avoir jusqu'en 2027… mais la réception c'est dès 2026. 👀
+
+Les 2 dates de la réforme, expliquées vite fait.
+
+Fatturi s'en occupe pour toi. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j8-tt-reel-concept",
+    day: "2026-07-16",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J8 · TikTok · Reel concept (réutilisation J1)",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Être prêt pour 2026 sans rien changer à ta routine. 🔗
+
+Tu branches Stripe, PayPal ou Shopify une fois — chaque vente devient une facture envoyée automatiquement.
+
+Encaissé le matin, facturé avant midi.
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J9 · Combien ça coûte vraiment ? ───────────────────────
+  {
+    key: "j9-li-text",
+    day: "2026-07-17",
+    time: "08:30",
+    channel: "page",
+    label: "J9 · LinkedIn · Post texte (coût / prix)",
+    text: withTags(
+      `« Encore un abonnement pour faire mes factures ? Non merci. » On comprend la réaction. Alors posons les vrais chiffres.
+
+Ce que coûte la facturation manuelle, aujourd'hui, sans aucun abonnement :
+→ ~20 heures par mois pour une boutique à 300 ventes,
+→ des erreurs de saisie (TVA, montant, mentions légales) qui se paient cher,
+→ des relances et des factures oubliées.
+
+Ce qui vous attend si vous ne changez rien pour 2026 :
+→ le portail public de l'État restera gratuit pour le strict minimum,
+→ mais il ne fait que le minimum : pas d'automatisation, pas de connexion à vos paiements. Tout reste à faire à la main, une facture après l'autre.
+
+La vraie question n'est donc pas « combien coûte l'outil ? » mais « combien me coûte de continuer comme avant ? ».
+
+Fatturi remplace ces 20 heures par 0 : vous branchez vos paiements une fois, chaque vente devient une facture — et vous êtes prêt pour la réforme.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j9-li-video",
+    day: "2026-07-17",
+    time: "12:30",
+    channel: "page",
+    label: "J9 · LinkedIn · Vidéo compteur (4:5, réutilisation J2)",
+    video: { file: "public/campaign/j2-counter-reel-li.mp4", thumbnail: "public/campaign/j2-counter-thumb-li.png" },
+    text: withTags(
+      `Le vrai coût de la facturation, ce n'est pas l'abonnement. 👇
+
+Ce sont les 20 heures par mois passées à recopier des factures à la main. On fait le calcul en 15 secondes.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j9-li-carousel",
+    day: "2026-07-17",
+    time: "19:00",
+    channel: "page",
+    label: "J9 · LinkedIn · Carrousel coût (réutilisation J2)",
+    images: [
+      { file: "public/campaign/j2-cost-1.png" },
+      { file: "public/campaign/j2-cost-2.png" },
+      { file: "public/campaign/j2-cost-3.png" },
+      { file: "public/campaign/j2-cost-4.png" },
+      { file: "public/campaign/j2-cost-5.png" },
+    ],
+    text: withTags(
+      `« Ça coûte combien ? » La mauvaise question. 🔗
+
+Le poste de coût le plus lourd, c'est le temps passé à la main — pas l'outil. Faites glisser pour le détail chiffré.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+
+  {
+    key: "j9-ig-carousel",
+    day: "2026-07-17",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J9 · Instagram · Carrousel coût (réutilisation J2)",
+    images: [
+      { file: "public/campaign/j2-cost-1.png" },
+      { file: "public/campaign/j2-cost-2.png" },
+      { file: "public/campaign/j2-cost-3.png" },
+      { file: "public/campaign/j2-cost-4.png" },
+      { file: "public/campaign/j2-cost-5.png" },
+    ],
+    text: withTags(
+      `« Je vais pas payer pour faire mes factures. » 💸
+
+Ok, mais à la main ça te coûte déjà 20 h/mois. Swipe pour voir le vrai calcul 👉
+
+Fatturi remet le compteur à 0.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j9-ig-reel",
+    day: "2026-07-17",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J9 · Instagram · Reel compteur (réutilisation J2)",
+    video: { file: "public/campaign/j2-counter-reel.mp4", thumbnail: "public/campaign/j2-counter-thumb.png" },
+    text: withTags(
+      `20 heures par mois. C'est le prix de la facture « gratuite » faite à la main. ⏱️
+
+Fatturi le ramène à 0 : chaque vente → une facture automatique. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j9-ig-card",
+    day: "2026-07-17",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J9 · Instagram · Card citation",
+    image: { file: "public/campaign/card-morning-invoiced.png" },
+    text: withTags(
+      `« Encaissé le matin, facturé avant midi. » ☕
+
+Sans y penser, sans y passer tes soirées. Chaque vente devient une facture envoyée automatiquement.
+
+C'est ça, Fatturi.
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+
+  {
+    key: "j9-tt-reel",
+    day: "2026-07-17",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J9 · TikTok · Reel compteur (réutilisation J2)",
+    video: { file: "public/campaign/j2-counter-reel.mp4", thumbnail: "public/campaign/j2-counter-thumb.png" },
+    text: withTags(
+      `« Je paierai pas un abonnement pour mes factures. » 😤 Ok… mais à la main tu paies déjà 20 h/mois.
+
+Le vrai calcul en 15 secondes.
+
+Fatturi remet le compteur à 0. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j9-tt-reel-concept",
+    day: "2026-07-17",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J9 · TikTok · Reel concept (réutilisation J1)",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Le maillon manquant entre ton paiement et ta facture. 🔗
+
+Fatturi le remplace : la vente encaissée devient une facture PDF envoyée par email. Automatiquement.
+
+Encaissé le matin, facturé avant midi.
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J10 · Avant / après (la solution) ───────────────────────
+  {
+    key: "j10-li-text",
+    day: "2026-07-18",
+    time: "08:30",
+    channel: "page",
+    label: "J10 · LinkedIn · Post texte (avant/après solution)",
+    text: withTags(
+      `Deux e-commerçants. Même chiffre d'affaires. Même réforme qui arrive. Une seule différence : leur mois de facturation.
+
+Le premier, sans rien changer :
+→ il exporte ses ventes, recopie chaque client, génère chaque PDF, traque les oublis. ~3 heures par mois, et une charge mentale permanente. Et en 2026, il devra en plus gérer la conformité, dans l'urgence.
+
+Le second, avec Fatturi :
+→ il a branché ses paiements une fois. Chaque vente devient une facture envoyée automatiquement, au bon format, prête pour la réforme. Temps passé : 0.
+
+La différence n'est pas « un peu de temps gagné ». C'est une tâche entière qui disparaît de votre mois — et une échéance 2026 déjà réglée avant même qu'elle n'arrive.
+
+Vous voulez être lequel des deux ?
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j10-li-video",
+    day: "2026-07-18",
+    time: "12:30",
+    channel: "page",
+    label: "J10 · LinkedIn · Vidéo avant/après (4:5, réutilisation J4)",
+    video: { file: "public/campaign/j4-beforeafter-reel-li.mp4", thumbnail: "public/campaign/j4-beforeafter-thumb-li.png" },
+    text: withTags(
+      `Votre facturation : avant / après Fatturi. 👇
+
+Le même mois, deux réalités — ~3 heures de saisie manuelle d'un côté, 0 de l'autre. Et une conformité 2026 déjà en place.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j10-li-carousel",
+    day: "2026-07-18",
+    time: "19:00",
+    channel: "page",
+    label: "J10 · LinkedIn · Carrousel récap (réutilisation J4)",
+    images: [
+      { file: "public/campaign/j4-recap-1.png" },
+      { file: "public/campaign/j4-recap-2.png" },
+      { file: "public/campaign/j4-recap-3.png" },
+      { file: "public/campaign/j4-recap-4.png" },
+      { file: "public/campaign/j4-recap-5.png" },
+    ],
+    text: withTags(
+      `Ce qui change quand vous arrêtez de facturer à la main. 🔗
+
+3 raisons qui font passer les e-commerçants à Fatturi : multi-canaux, zéro saisie, prêt pour 2026. Faites glisser 👉
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+
+  {
+    key: "j10-ig-carousel",
+    day: "2026-07-18",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J10 · Instagram · Carrousel récap (réutilisation J4)",
+    images: [
+      { file: "public/campaign/j4-recap-1.png" },
+      { file: "public/campaign/j4-recap-2.png" },
+      { file: "public/campaign/j4-recap-3.png" },
+      { file: "public/campaign/j4-recap-4.png" },
+      { file: "public/campaign/j4-recap-5.png" },
+    ],
+    text: withTags(
+      `Avant : 3 h de saisie. Après : 0. ⚡
+
+3 raisons de laisser Fatturi facturer à ta place. Swipe 👉
+
+Encaissé le matin, facturé avant midi.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j10-ig-reel",
+    day: "2026-07-18",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J10 · Instagram · Reel avant/après (réutilisation J4)",
+    video: { file: "public/campaign/j4-beforeafter-reel.mp4", thumbnail: "public/campaign/j4-beforeafter-thumb.png" },
+    text: withTags(
+      `Ta facturation : avant vs après. ⚡
+
+~3 h de saisie manuelle → 0. Tu branches une fois, Fatturi fait le reste.
+
+Prêt pour 2026, sans y penser. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j10-ig-card",
+    day: "2026-07-18",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J10 · Instagram · Card auto-entrepreneur (réutilisation)",
+    image: { file: "public/campaign/card-autoentrepreneur.png" },
+    text: withTags(
+      `Prends de l'avance, pas la réforme dans la figure. 📌
+
+Auto-entrepreneur, micro, indépendant : Fatturi te met en règle pour 2026 sans changer tes habitudes.
+
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+
+  {
+    key: "j10-tt-reel",
+    day: "2026-07-18",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J10 · TikTok · Reel avant/après (réutilisation J4)",
+    video: { file: "public/campaign/j4-beforeafter-reel.mp4", thumbnail: "public/campaign/j4-beforeafter-thumb.png" },
+    text: withTags(
+      `POV : ton pote galère 3 h sur ses factures, toi 0. 😎
+
+Avant/après quand tu branches Fatturi.
+
+Prêt pour 2026 sans y penser. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j10-tt-reel-concept",
+    day: "2026-07-18",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J10 · TikTok · Reel concept (réutilisation J1)",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `La conformité 2026 sans lever le petit doigt. 🔗
+
+Tu branches tes paiements une fois — Fatturi génère et envoie tes factures au bon format, automatiquement.
+
+Encaissé le matin, facturé avant midi.
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J11 · Clients particuliers / B2C ───────────────────────
+  {
+    key: "j11-li-text",
+    day: "2026-07-20",
+    time: "08:30",
+    channel: "page",
+    label: "J11 · LinkedIn · Post texte (B2C / e-reporting)",
+    text: withTags(
+      `« Je ne facture que des particuliers — donc la réforme ne me concerne pas. »
+
+On l'entend souvent chez les coiffeuses, taxis, thérapeutes, aides à domicile. Et c'est un malentendu.
+
+En B2C, vous n'avez effectivement pas à envoyer une facture électronique à votre client particulier.
+
+En revanche, vous devez transmettre les données de vos encaissements à l'administration : c'est le e-reporting. Même règle pour une micro-entreprise, même sans TVA.
+
+Autrement dit : pas d'e-facture client ≠ hors réforme.
+
+Fatturi centralise vos paiements et prépare vos données — sans y passer vos soirées.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j11-li-video",
+    day: "2026-07-20",
+    time: "12:30",
+    channel: "page",
+    label: "J11 · LinkedIn · Vidéo B2C (4:5, VO + musique)",
+    video: { file: "public/campaign/j11-b2c-reel-li.mp4", thumbnail: "public/campaign/j11-b2c-thumb-li.png" },
+    text: withTags(
+      `Tu ne factures que des particuliers ? La réforme te concerne quand même. 👇
+
+B2C, e-reporting, métiers de service : on clarifie en 20 secondes (voix + musique).
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j11-li-carousel",
+    day: "2026-07-20",
+    time: "19:00",
+    channel: "page",
+    label: "J11 · LinkedIn · Carrousel B2C",
+    images: [
+      { file: "public/campaign/j11-b2c-1.png" },
+      { file: "public/campaign/j11-b2c-2.png" },
+      { file: "public/campaign/j11-b2c-3.png" },
+      { file: "public/campaign/j11-b2c-4.png" },
+      { file: "public/campaign/j11-b2c-5.png" },
+    ],
+    text: withTags(
+      `Clients particuliers : ce qui change vraiment avec la réforme. 🔗
+
+Pas d'e-facture, mais e-reporting. Faites glisser pour démêler le vrai du faux.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+
+  {
+    key: "j11-ig-carousel",
+    day: "2026-07-20",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J11 · Instagram · Carrousel B2C",
+    images: [
+      { file: "public/campaign/j11-b2c-1.png" },
+      { file: "public/campaign/j11-b2c-2.png" },
+      { file: "public/campaign/j11-b2c-3.png" },
+      { file: "public/campaign/j11-b2c-4.png" },
+      { file: "public/campaign/j11-b2c-5.png" },
+    ],
+    text: withTags(
+      `Tu ne factures que des particuliers ? 💇‍♀️🚕
+
+« Donc la réforme c'est pas pour moi. » Spoiler : si. Swipe pour comprendre 👉
+
+Fatturi prépare tes données sans y passer tes soirées.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j11-ig-reel",
+    day: "2026-07-20",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J11 · Instagram · Reel B2C (VO + musique)",
+    video: { file: "public/campaign/j11-b2c-reel.mp4", thumbnail: "public/campaign/j11-b2c-thumb.png" },
+    text: withTags(
+      `POV : tu ne factures que des particuliers et tu penses être tranquille. 👀
+
+B2C ≠ hors réforme. E-reporting, je t'explique en 20 secondes.
+
+Fatturi centralise tes paiements. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j11-ig-card",
+    day: "2026-07-20",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J11 · Instagram · Card B2C",
+    image: { file: "public/campaign/card-b2c-ereporting.png" },
+    text: withTags(
+      `B2C ≠ hors réforme. 📌
+
+Pas de facture électronique vers un particulier — mais le e-reporting de tes encaissements, oui.
+
+Fatturi t'accompagne.
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+
+  {
+    key: "j11-tt-reel",
+    day: "2026-07-20",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J11 · TikTok · Reel B2C (VO + musique)",
+    video: { file: "public/campaign/j11-b2c-reel.mp4", thumbnail: "public/campaign/j11-b2c-thumb.png" },
+    text: withTags(
+      `POV : tu ne factures que des particuliers et tu penses être hors réforme. 😬
+
+B2C = e-reporting. Je t'explique vite fait.
+
+Fatturi s'en occupe. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j11-tt-reel-concept",
+    day: "2026-07-20",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J11 · TikTok · Reel concept (réutilisation J1)",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Tes encaissements B2C, prêts pour le e-reporting. 🔗
+
+Tu branches tes paiements une fois — Fatturi centralise et prépare tes données.
 
 Encaissé le matin, facturé avant midi.
 Accès prioritaire → fatturi.com`,

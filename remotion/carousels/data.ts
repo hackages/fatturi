@@ -144,6 +144,35 @@ export const DECKS: Record<string, Slide[]> = {
     },
   ],
 
+  // ───────── J11 · Clients particuliers / B2C ─────────
+  b2c: [
+    { kind: "cover", kicker: "Clients particuliers", title: "Je ne facture que des particuliers…" },
+    {
+      kind: "myth",
+      myth: "« Donc la réforme ne me concerne pas. »",
+      reality: "Faux. En B2C, pas de facture électronique — mais le e-reporting, oui.",
+    },
+    {
+      kind: "point",
+      n: 1,
+      kicker: "B2C",
+      title: "Pas d'e-facture client",
+      body: "Tu n'as pas à envoyer une facture électronique à un particulier.",
+    },
+    {
+      kind: "point",
+      n: 2,
+      kicker: "E-reporting",
+      title: "Tes encaissements, déclarés",
+      body: "Les données de tes ventes aux particuliers doivent être transmises à l'administration.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi prépare tes données.",
+      body: "Coiffeuse, taxi, thérapeute, aide à domicile : on centralise tes paiements sans y passer tes soirées.",
+    },
+  ],
+
   recap: [
     { kind: "cover", kicker: "Avant / Après", title: "Pourquoi les e-commerçants passent à Fatturi." },
     {

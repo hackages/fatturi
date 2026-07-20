@@ -24,6 +24,7 @@ const CAROUSELS = {
   "j5-concerned": "concerned",
   "j6-channels": "channels",
   "j7-objections": "objections",
+  "j11-b2c": "b2c",
 };
 
 const CARDS = {
@@ -31,6 +32,7 @@ const CARDS = {
   "card-morning-invoiced": "morning-invoiced",
   "card-autoentrepreneur": "autoentrepreneur",
   "card-pdp-security": "pdp-security",
+  "card-b2c-ereporting": "b2c-ereporting",
 };
 
 // [id de composition, base du fichier de sortie] — 9:16 (IG/TikTok) + 4:5 (LinkedIn).
@@ -41,6 +43,7 @@ const REELS = [
   ["J5-ConcernedReel", "j5-concerned"],
   ["J6-ChannelsReel", "j6-channels"],
   ["J7-FormatReel", "j7-format"],
+  ["J11-B2cReel", "j11-b2c"],
 ];
 
 // Filtre optionnel par jour(s) : `... reels j5 j6` ne rend que ce qui commence

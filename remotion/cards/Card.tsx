@@ -36,6 +36,12 @@ export const CARDS: Record<string, CardData> = {
     quote: "Une plateforme agréée par l'État.",
     sub: "Données chiffrées, plateforme certifiée. Fatturi s'appuie sur une PDP agréée pour envoyer vos factures.",
   },
+  "b2c-ereporting": {
+    kind: "quote",
+    kicker: "Clients particuliers",
+    quote: "B2C ≠ hors réforme.",
+    sub: "Pas de facture électronique vers un particulier — mais le e-reporting de tes encaissements, oui.",
+  },
 };
 
 const Bg: React.FC = () => (
