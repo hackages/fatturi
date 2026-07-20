@@ -52,20 +52,74 @@ export default async function ArticlePage({
   const cat = categoryOf(post.category);
   const related = getRelatedPosts(post);
 
-  const jsonLd = {
+  const pageUrl = `https://blog.fatturi.com/${post.slug}`;
+
+  const blogPostingLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
     author: { "@type": "Person", name: post.author },
-    publisher: { "@type": "Organization", name: "Fatturi" },
-    mainEntityOfPage: `https://blogs.fatturi.com/${post.slug}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Fatturi",
+      url: "https://fatturi.com",
+    },
+    mainEntityOfPage: pageUrl,
+    inLanguage: "fr-FR",
   };
+
+  const howToLd = post.howto
+    ? {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: post.howto.name,
+        description: post.howto.description,
+        ...(post.howto.totalTime ? { totalTime: post.howto.totalTime } : {}),
+        inLanguage: "fr-FR",
+        step: post.howto.steps.map((step, index) => ({
+          "@type": "HowToStep",
+          position: index + 1,
+          name: step.name,
+          text: step.text,
+        })),
+      }
+    : null;
+
+  const faqLd = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 
   return (
     <div className="pb-24">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
+      />
+      {howToLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
+        />
+      ) : null}
+      {faqLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      ) : null}
 
       {/* En-tête */}
       <header className="dotted-ink border-b border-black/[0.06]">

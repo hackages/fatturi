@@ -26,7 +26,7 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://blogs.fatturi.com"),
+  metadataBase: new URL("https://blog.fatturi.com"),
   title: {
     default: "Le blog Fatturi — Facturation électronique & réforme 2026",
     template: "%s · Le blog Fatturi",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Le blog Fatturi",
-    url: "https://blogs.fatturi.com",
+    url: "https://blog.fatturi.com",
   },
   alternates: { canonical: "/" },
 };

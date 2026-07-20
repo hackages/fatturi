@@ -27,6 +27,23 @@ export function categoryOf(slug: CategorySlug): Category {
   return CATEGORIES.find((c) => c.slug === slug)!;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface HowToStep {
+  name: string;
+  text: string;
+}
+
+export interface HowTo {
+  name: string;
+  description: string;
+  totalTime?: string; // ISO 8601 duration, ex. PT5M
+  steps: HowToStep[];
+}
+
 export interface Post {
   slug: string;
   title: string;
@@ -38,6 +55,8 @@ export interface Post {
   theme: Theme;
   featured?: boolean;
   content: string; // corps Markdown brut
+  faq?: FaqItem[];
+  howto?: HowTo;
 }
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
@@ -51,6 +70,47 @@ function normalizeDate(value: unknown): string {
 function estimateReadingMin(markdown: string): number {
   const words = markdown.trim().split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
+}
+
+function parseFaq(value: unknown): FaqItem[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  const items = value
+    .map((item) => {
+      if (!item || typeof item !== "object") return null;
+      const row = item as Record<string, unknown>;
+      const question = String(row.question ?? "").trim();
+      const answer = String(row.answer ?? "").trim();
+      if (!question || !answer) return null;
+      return { question, answer };
+    })
+    .filter((item): item is FaqItem => item !== null);
+  return items.length ? items : undefined;
+}
+
+function parseHowTo(value: unknown): HowTo | undefined {
+  if (!value || typeof value !== "object") return undefined;
+  const raw = value as Record<string, unknown>;
+  const name = String(raw.name ?? "").trim();
+  const description = String(raw.description ?? "").trim();
+  const stepsRaw = Array.isArray(raw.steps) ? raw.steps : [];
+  const steps = stepsRaw
+    .map((step) => {
+      if (!step || typeof step !== "object") return null;
+      const row = step as Record<string, unknown>;
+      const stepName = String(row.name ?? "").trim();
+      const text = String(row.text ?? "").trim();
+      if (!stepName || !text) return null;
+      return { name: stepName, text };
+    })
+    .filter((step): step is HowToStep => step !== null);
+  if (!name || !description || !steps.length) return undefined;
+  const totalTime = String(raw.totalTime ?? "").trim();
+  return {
+    name,
+    description,
+    ...(totalTime ? { totalTime } : {}),
+    steps,
+  };
 }
 
 function loadPosts(): Post[] {
@@ -72,6 +132,8 @@ function loadPosts(): Post[] {
           ? data.readingMin
           : estimateReadingMin(content),
       content,
+      faq: parseFaq(data.faq),
+      howto: parseHowTo(data.howto),
     };
   });
 }
