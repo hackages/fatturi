@@ -19,6 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: BASE, changeFrequency: "weekly", priority: 1 },
+    {
+      url: `${BASE}/premiers-pas`,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
     ...categories,
     ...posts,
   ];

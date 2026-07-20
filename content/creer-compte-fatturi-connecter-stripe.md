@@ -1,15 +1,15 @@
 ---
 title: "Créer un compte Fatturi et connecter Stripe : guide pas à pas"
-excerpt: "Inscrivez-vous sur fatturi.com, confirmez votre email, connectez Stripe et commencez à envoyer des factures automatiquement. Tutoriel vidéo + guide écrit, étape par étape."
+excerpt: "Inscrivez-vous sur fatturi.com, renseignez votre SIRET, connectez Stripe si besoin, choisissez un abonnement et commencez à facturer. Tutoriel vidéo + guide écrit."
 category: produit
 date: "2026-07-20"
 author: Arielle Toghau
-readingMin: 6
+readingMin: 7
 theme: gold
 howto:
   name: "Créer un compte Fatturi et connecter Stripe"
-  description: "Comment s'inscrire sur Fatturi, confirmer son email et connecter Stripe pour automatiser l'envoi des factures."
-  totalTime: "PT5M"
+  description: "Comment s'inscrire sur Fatturi, renseigner l'entreprise (SIRET), connecter Stripe et choisir un abonnement."
+  totalTime: "PT10M"
   steps:
     - name: "Aller sur fatturi.com"
       text: "Ouvrez fatturi.com : vous arrivez sur l'écran FATTURI — Connexion, avec les onglets Connexion et Inscription."
@@ -17,34 +17,36 @@ howto:
       text: "Cliquez sur l'onglet Inscription, renseignez votre nom, votre email et un mot de passe, puis validez."
     - name: "Confirmer votre email"
       text: "Ouvrez l'email de confirmation reçu de Fatturi et cliquez sur le lien pour accéder à votre espace."
+    - name: "Renseigner l'entreprise (SIRET)"
+      text: "Dans Paramètres, ouvrez Informations entreprise et saisissez votre SIRET pour récupérer les données."
     - name: "Connecter Stripe"
-      text: "Depuis votre espace Fatturi, lancez la connexion Stripe et autorisez l'accès à votre compte Stripe."
-    - name: "Vérifier que tout est prêt"
-      text: "Sur le Tableau de bord Fatturi, vérifiez que votre compte est actif et que Stripe est connecté pour automatiser vos factures."
+      text: "Si vous utilisez Stripe, connectez-le depuis Paramètres → Stripe Connect. Sinon, facturez directement dans Fatturi."
+    - name: "Choisir un abonnement"
+      text: "Dans Abonnement, choisissez la formule adaptée à votre volume de factures et appliquez un code promo si vous en avez un."
 faq:
   - question: "Où créer un compte Fatturi ?"
     answer: "Rendez-vous sur fatturi.com. Sur l'écran de connexion, cliquez sur l'onglet Inscription, puis indiquez votre nom, votre email et un mot de passe."
   - question: "Que faire après la création du compte ?"
-    answer: "Fatturi vous envoie un email de confirmation. Cliquez sur le lien reçu pour accéder à votre espace, puis connectez Stripe pour automatiser vos factures."
-  - question: "Pourquoi connecter Stripe à Fatturi ?"
-    answer: "Une fois Stripe relié, Fatturi peut générer et envoyer automatiquement une facture PDF à chaque vente encaissée, sans ressaisie."
+    answer: "Confirmez votre email, puis ouvrez Paramètres : renseignez votre entreprise (SIRET), connectez Stripe si besoin, et émettez une première facture pour compléter la progression."
+  - question: "Dois-je obligatoirement connecter Stripe ?"
+    answer: "Non. Stripe est optionnel dans Paramètres. Sans Stripe, vous pouvez créer et envoyer vos factures directement dans Fatturi."
   - question: "Combien de temps faut-il pour être opérationnel ?"
-    answer: "Comptez environ cinq minutes : inscription, confirmation email, puis connexion Stripe. Une vidéo Loom de deux minutes montre aussi le parcours en entier."
+    answer: "Comptez environ cinq à dix minutes. Une vidéo Loom d’environ quatre minutes montre le parcours en entier."
 ---
 
-Vous voulez automatiser vos factures dès aujourd'hui ? Voici comment **créer un compte Fatturi** sur [fatturi.com](https://fatturi.com), confirmer votre email, puis **connecter Stripe** pour que chaque vente déclenche l'envoi d'une facture — sans ressaisie.
+Vous voulez automatiser vos factures dès aujourd'hui ? Voici comment **créer un compte Fatturi** sur [fatturi.com](https://fatturi.com), renseigner votre **SIRET**, **connecter Stripe** si vous en avez un, puis choisir un **abonnement**.
 
 Deux formats, même parcours : choisissez la **vidéo** ou le **guide écrit** (ou les deux).
 
-- [Regarder la vidéo](#regarder-la-video) (~2 min)
+- [Regarder la vidéo](#regarder-la-video) (~4 min)
 - [Suivre le guide écrit](#suivre-le-guide-ecrit)
 - [Questions fréquentes](#questions-frequentes)
 
 ## Regarder la vidéo
 
-Tutoriel Loom : création du compte Fatturi, email de confirmation, puis connexion Stripe.
+Tutoriel Loom : création du compte Fatturi, infos entreprise (SIRET), connexion Stripe, puis choix d’un abonnement.
 
-[Créer son compte Fatturi et connecter Stripe](https://www.loom.com/share/46e28658f367456fb8e2c8cd57b96ff3)
+[Créer un compte Fatturi, connecter Stripe et choisir un abonnement](https://www.loom.com/share/7ebe123eef9b462ca0090076f708a657)
 
 > [!NOTE] Préférez le texte ?
 > Le guide ci-dessous reprend les mêmes étapes, avec des captures d'écran pour avancer à votre rythme.
@@ -68,9 +70,6 @@ Sur le même écran, cliquez sur l'onglet **Inscription** :
 3. Créez un **mot de passe**
 4. Validez pour **créer le compte**
 
-> [!NOTE] Capture à venir
-> Écran Inscription (formulaire complet) — à ajouter dès que vous l'avez.
-
 ### Confirmer votre email
 
 Après l'inscription, Fatturi vous envoie un **email de confirmation** avec un lien d'accès à votre espace.
@@ -79,36 +78,46 @@ Après l'inscription, Fatturi vous envoie un **email de confirmation** avec un l
 2. Cherchez le message Fatturi (pensez à vérifier les spams si besoin)
 3. Cliquez sur le **lien de confirmation** pour entrer dans votre compte
 
-> [!NOTE] Capture à venir
-> Email de confirmation reçu — à remplacer par votre capture d'écran.
+### Renseigner l'entreprise (SIRET)
 
-### Connecter Stripe
+Dans le menu, ouvrez **Paramètres**. Vous y voyez la **Progression globale** : les étapes **Entreprise** et **1re facture** sont requises ; **Stripe**, PayPal et Shopify sont optionnels.
 
-Une fois dans votre espace Fatturi, lancez la **connexion Stripe** :
+![Paramètres Fatturi : progression à 100 %, informations entreprise et Stripe Connect](/blog/creer-compte-connecter-stripe/03-parametres.png)
 
-1. Choisissez Stripe parmi vos canaux de paiement
-2. Autorisez Fatturi à se connecter à votre compte Stripe
-3. Revenez dans Fatturi : Stripe doit apparaître comme **connecté**
+1. Ouvrez **Informations entreprise**
+2. Saisissez votre **SIRET** pour récupérer les données de votre société
+3. Complétez si besoin (TVA par défaut, mentions légales…)
 
-> [!NOTE] Capture à venir
-> Écran de connexion Stripe — à remplacer par votre capture d'écran.
+### Connecter Stripe (optionnel)
+
+Toujours dans **Paramètres**, section **Stripe Connect** :
+
+1. Si vous encaissez déjà avec Stripe, lancez la connexion et autorisez Fatturi
+2. Une fois **Connecté**, chaque paiement peut déclencher une facture automatiquement
+3. Pas de Stripe ? Laissez cette étape de côté et créez vos factures directement dans Fatturi
+
+### Choisir un abonnement
+
+Ouvrez **Abonnement** dans le menu. Choisissez le plan adapté à votre volume de factures (Gratuit, Starter, Pro, Business — mensuel ou annuel).
+
+![Écran Abonnement Fatturi : plans Gratuit, Starter, Pro et Business](/blog/creer-compte-connecter-stripe/04-abonnement.png)
+
+Si vous avez reçu un **code promo**, appliquez-le au moment de souscrire.
 
 ### Vérifier que tout est prêt
 
-Après connexion, vous arrivez sur votre **Tableau de bord** : menu à gauche (Devis, Factures, Clients, Produits, Paramètres…), indicateurs en haut, et la liste de vos dernières factures.
+Après configuration, votre **Tableau de bord** affiche l’activité : factures à envoyer, émises, volume du mois, et la liste des dernières factures.
 
-![Tableau de bord Fatturi après connexion](/blog/creer-compte-connecter-stripe/05-tableau-de-bord.png)
+![Tableau de bord Fatturi](/blog/creer-compte-connecter-stripe/05-tableau-de-bord.png)
 
 Contrôlez rapidement que :
 
-- votre compte Fatturi est actif et votre organisation apparaît bien,
-- vous pouvez naviguer dans **Factures**, **Clients** et **Paramètres**,
-- Stripe est bien relié (une fois l'étape précédente faite).
-
-Dès lors, vos prochaines ventes Stripe peuvent déclencher l'**envoi automatique d'une facture PDF** à vos clients.
+- Paramètres indique une configuration complète (ou au minimum Entreprise + 1re facture),
+- vous pouvez naviguer dans **Factures**, **Clients** et **Abonnement**,
+- Stripe est relié **si** vous l’avez choisi.
 
 > [!NOTE] Et après ?
-> Vous pouvez aussi brancher PayPal ou Shopify plus tard. Le principe reste le même : connecter le canal, puis laisser Fatturi facturer à chaque vente.
+> PayPal et Shopify arrivent bientôt. En attendant, Stripe ou la facturation manuelle dans Fatturi suffisent pour démarrer.
 
 ## Questions fréquentes
 
@@ -122,8 +131,8 @@ Vérifiez les dossiers spam / promotions. Si rien n'arrive après quelques minut
 
 ### Dois-je déjà avoir un compte Stripe ?
 
-Oui, pour la connexion Stripe. Si vous n'en avez pas encore, créez-en un sur Stripe, puis revenez dans Fatturi pour autoriser la connexion.
+Non, ce n’est pas obligatoire. Stripe est **optionnel** dans Paramètres. Sans Stripe, vous facturez directement dans Fatturi.
 
 ### Combien de temps avant d'être opérationnel ?
 
-Environ **cinq minutes** : inscription, confirmation email, connexion Stripe. La [vidéo Loom](#regarder-la-video) montre le parcours en environ deux minutes.
+Environ **cinq à dix minutes**. La [vidéo Loom](#regarder-la-video) montre le parcours en environ quatre minutes.
