@@ -935,7 +935,7 @@ Accès prioritaire → fatturi.com`,
     text: withTags(
       `Une plateforme agréée par l'État. 🔒
 
-Données chiffrées, plateforme certifiée : tes factures partent en sécurité. Fatturi s'appuie sur une PDP agréée.
+Données chiffrées, plateforme certifiée : tes factures partent en sécurité. Fatturi s'appuie sur une PA.
 
 Accès prioritaire → fatturi.com`,
       TAGS_IG

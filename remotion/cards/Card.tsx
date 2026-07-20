@@ -34,7 +34,7 @@ export const CARDS: Record<string, CardData> = {
     kind: "quote",
     kicker: "Sécurité",
     quote: "Une plateforme agréée par l'État.",
-    sub: "Données chiffrées, plateforme certifiée. Fatturi s'appuie sur une PDP agréée pour envoyer vos factures.",
+    sub: "Données chiffrées, plateforme certifiée. Fatturi s'appuie sur une PA pour envoyer vos factures.",
   },
   "b2c-ereporting": {
     kind: "quote",

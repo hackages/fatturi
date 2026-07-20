@@ -130,7 +130,7 @@ export const DECKS: Record<string, Slide[]> = {
     {
       kind: "myth",
       myth: "« Ces plateformes vont se faire pirater. »",
-      reality: "Les PDP sont certifiées par l'État : sécurité et chiffrement obligatoires.",
+      reality: "Les PA sont certifiées par l'État : sécurité et chiffrement obligatoires.",
     },
     {
       kind: "myth",
@@ -194,7 +194,7 @@ export const DECKS: Record<string, Slide[]> = {
       n: 3,
       kicker: "Prêt pour 2026",
       title: "Aucune migration dans l'urgence",
-      body: "Le jour J, vos factures partent via une PDP agréée. Rien à changer.",
+      body: "Le jour J, vos factures partent via une PA. Rien à changer.",
     },
     {
       kind: "cta",

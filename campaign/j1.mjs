@@ -13,7 +13,7 @@ C'est là que la chaîne casse.
 
 Aujourd'hui, entre le moment où vous êtes payé et le moment où votre client reçoit sa facture, il y a un trou. Vous le comblez à la main : export, copier-coller, PDF, envoi. Chaque vente. Chaque mois.
 
-Fatturi est le chaînon manquant. On relie directement vos paiements en ligne à la facture envoyée par email — automatiquement, dès aujourd'hui. Et le jour où la réforme 2026 s'applique, la même facture part via une PDP agréée, sans que vous changiez quoi que ce soit.
+Fatturi est le chaînon manquant. On relie directement vos paiements en ligne à la facture envoyée par email — automatiquement, dès aujourd'hui. Et le jour où la réforme 2026 s'applique, la même facture part via une PA, sans que vous changiez quoi que ce soit.
 
 Encaissé aujourd'hui, facturé aussitôt.
 

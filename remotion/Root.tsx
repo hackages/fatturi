@@ -160,6 +160,7 @@ export const RemotionRoot: React.FC = () => {
         height={REEL_H}
         fps={REEL_FPS}
         durationInFrames={B2C_DURATION}
+        defaultProps={{ withBgm: true }}
       />
       <Composition
         id="J11-B2cReel-LI"
@@ -168,6 +169,26 @@ export const RemotionRoot: React.FC = () => {
         height={1350}
         fps={REEL_FPS}
         durationInFrames={B2C_DURATION}
+        defaultProps={{ withBgm: true }}
+      />
+      {/* Même reel, VO seule (sans BGM) — pour ajout musique tendance côté client */}
+      <Composition
+        id="J11-B2cReel-VoOnly"
+        component={B2cReel}
+        width={REEL_W}
+        height={REEL_H}
+        fps={REEL_FPS}
+        durationInFrames={B2C_DURATION}
+        defaultProps={{ withBgm: false }}
+      />
+      <Composition
+        id="J11-B2cReel-VoOnly-LI"
+        component={B2cReel}
+        width={1080}
+        height={1350}
+        fps={REEL_FPS}
+        durationInFrames={B2C_DURATION}
+        defaultProps={{ withBgm: false }}
       />
     </>
   );

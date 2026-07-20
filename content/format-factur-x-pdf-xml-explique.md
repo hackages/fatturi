@@ -21,11 +21,11 @@ C'est le meilleur des deux mondes : la machine gagne en automatisation, l'humain
 
 ## Pourquoi c'est important pour la conformité
 
-Les données structurées suivent la norme européenne **EN 16931**. C'est ce qui permet à une PDP de vérifier, transmettre et archiver la facture de façon fiable, et à l'administration de recouper les informations.
+Les données structurées suivent la norme européenne **EN 16931**. C'est ce qui permet à une PA de vérifier, transmettre et archiver la facture de façon fiable, et à l'administration de recouper les informations.
 
 > [!NOTE] Bon à savoir
 > Vous n'avez pas à produire ce XML à la main. Un bon outil de facturation le génère pour vous, sans que vous ayez à comprendre la moindre balise.
 
 ## Et concrètement avec Fatturi ?
 
-Fatturi génère des factures au format Factur-X à partir de vos ventes, puis les transmet via une PDP agréée. Vous n'écrivez pas une ligne de XML : vous encaissez, la facture conforme part toute seule.
+Fatturi génère des factures au format Factur-X à partir de vos ventes, puis les transmet via une PA. Vous n'écrivez pas une ligne de XML : vous encaissez, la facture conforme part toute seule.

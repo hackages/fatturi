@@ -13,7 +13,7 @@ La réforme française de la facturation électronique arrive, et elle concerne 
 
 ## De quoi parle-t-on exactement ?
 
-La réforme impose aux entreprises **assujetties à la TVA** d'échanger leurs factures B2B au **format électronique structuré** (et non plus un simple PDF envoyé par email), via une **Plateforme de Dématérialisation Partenaire (PDP)** agréée par l'État. En parallèle, un dispositif de **e-reporting** transmet à l'administration certaines données de transactions.
+La réforme impose aux entreprises **assujetties à la TVA** d'échanger leurs factures B2B au **format électronique structuré** (et non plus un simple PDF envoyé par email), via une **Plateforme Agréée (PA)** immatriculée par l'État. En parallèle, un dispositif de **e-reporting** transmet à l'administration certaines données de transactions.
 
 L'objectif affiché : lutter contre la fraude à la TVA, simplifier les déclarations et fluidifier les échanges entre entreprises.
 
@@ -46,11 +46,11 @@ Au-delà des sanctions prévues en cas de non-conformité, le vrai risque est op
 ## Comment s'y préparer sereinement
 
 - Vérifiez votre statut TVA et identifiez vos flux B2B.
-- Choisissez une solution reliée à une PDP agréée.
+- Choisissez une solution reliée à une PA.
 - Automatisez dès aujourd'hui l'émission de vos factures, même au format PDF par email.
-- Activez la bascule vers la PDP le moment venu, sans changer vos habitudes.
+- Activez la bascule vers la PA le moment venu, sans changer vos habitudes.
 
 > [!NOTE] Le rôle de Fatturi
-> Fatturi connecte Stripe, PayPal et Shopify pour envoyer automatiquement une facture PDF par email à chaque vente — dès aujourd'hui, et via une PDP agréée le jour où la réforme 2026 s'appliquera.
+> Fatturi connecte Stripe, PayPal et Shopify pour envoyer automatiquement une facture PDF par email à chaque vente — dès aujourd'hui, et via une PA le jour où la réforme 2026 s'appliquera.
 
 La réforme n'est pas une contrainte de plus si vous l'anticipez : c'est l'occasion de supprimer une tâche répétitive de votre quotidien.

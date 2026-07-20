@@ -18,7 +18,7 @@ export interface Category {
 
 export const CATEGORIES: Category[] = [
   { slug: "reforme", label: "Réforme 2026", accent: "navy", blurb: "La réforme française de la facturation électronique, expliquée." },
-  { slug: "guides", label: "Guides", accent: "sage", blurb: "PDP, Factur-X, TVA : les notions clés, sans jargon." },
+  { slug: "guides", label: "Guides", accent: "sage", blurb: "PA, Factur-X, TVA : les notions clés, sans jargon." },
   { slug: "produit", label: "Produit", accent: "gold", blurb: "Ce que Fatturi automatise pour vous, en détail." },
   { slug: "ecommerce", label: "E-commerce", accent: "navy", blurb: "Facturation pour ceux qui vendent en ligne." },
 ];

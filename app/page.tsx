@@ -18,7 +18,7 @@ export default function HomePage() {
             La facturation électronique, sans le jargon.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-navy/65">
-            Réforme 2026, PDP, Factur-X, automatisation : nos guides et actualités pour les indépendants
+            Réforme 2026, PA, Factur-X, automatisation : nos guides et actualités pour les indépendants
             et e-commerçants qui veulent prendre de l&apos;avance — pas la migraine.
           </p>
         </div>

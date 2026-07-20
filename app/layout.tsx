@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Le blog Fatturi",
   },
   description:
-    "Conseils, guides et actualités sur la facturation électronique, la réforme française 2026, les PDP et l'automatisation des factures pour les indépendants et e-commerçants.",
+    "Conseils, guides et actualités sur la facturation électronique, la réforme française 2026, les PA (plateformes agréées) et l'automatisation des factures pour les indépendants et e-commerçants.",
   openGraph: {
     type: "website",
     locale: "fr_FR",

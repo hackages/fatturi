@@ -23,7 +23,7 @@ Fatturi remplace ce maillon : dès qu'un paiement arrive, une facture PDF est g�
 - La facture part par email transactionnel, avec suivi d'ouverture et d'échec.
 
 > [!NOTE] Et pour 2026 ?
-> Le jour où la réforme s'appliquera à vos clients B2B, un paramètre activera l'émission via PDP agréée. La même facture, transmise différemment — sans que vous changiez vos habitudes.
+> Le jour où la réforme s'appliquera à vos clients B2B, un paramètre activera l'émission via une PA. La même facture, transmise différemment — sans que vous changiez vos habitudes.
 
 ## Ce que vous y gagnez
 

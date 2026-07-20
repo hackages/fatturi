@@ -105,7 +105,7 @@ const Beat: React.FC<{
   );
 };
 
-export const B2cReel: React.FC = () => {
+export const B2cReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }) => {
   const t1 = HOOK;
   const t2 = t1 + BEAT1;
   const t3 = t2 + BEAT2;
@@ -113,8 +113,9 @@ export const B2cReel: React.FC = () => {
 
   return (
     <AbsoluteFill>
-      {/* Warm acoustic bed from frame 0, ducked under VO. */}
-      <Audio src={staticFile(AUDIO.bgm)} volume={0.14} />
+      {/* Warm acoustic bed from frame 0, ducked under VO. Omit for the
+          « VO seule » export — the client adds trendy music on Drive. */}
+      {withBgm ? <Audio src={staticFile(AUDIO.bgm)} volume={0.14} /> : null}
 
       <ReelShell cover={{ kicker: "Clients particuliers", title: "B2C ≠ hors réforme." }}>
         <Sequence durationInFrames={HOOK}>

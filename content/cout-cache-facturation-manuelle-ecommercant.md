@@ -28,4 +28,4 @@ Prenons une boutique qui réalise **300 ventes par mois**. Comptez environ 4 min
 L'automatisation ne fait pas gagner « un peu de temps » : elle supprime une tâche entière. Chaque vente Stripe, PayPal ou Shopify devient une facture envoyée automatiquement. Le temps consacré à la facturation retombe à zéro.
 
 > [!NOTE] Pensé pour l'e-commerce
-> Fatturi connecte Stripe, PayPal et Shopify pour envoyer automatiquement une facture PDF par email à chaque vente — dès aujourd'hui, et via une PDP agréée le jour où la réforme 2026 s'appliquera.
+> Fatturi connecte Stripe, PayPal et Shopify pour envoyer automatiquement une facture PDF par email à chaque vente — dès aujourd'hui, et via une PA le jour où la réforme 2026 s'appliquera.
