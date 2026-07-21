@@ -16,6 +16,9 @@
 //   - Les reels IG portent leur cover en frame 0 (miniature du grid).
 //   - Les médias sont référencés par fichier ; le runner les convertit en URL
 //     publique (MEDIA_BASE_URL) car Buffer récupère le média via une URL.
+//   - LinkedIn carrousels → document PDF (document: { file, title, thumbnail }).
+//     Les multi-images LinkedIn sortent en grille ; Instagram garde images: […].
+//     Générer les PDF : npm run render:carousel-pdfs
 //
 // Créneaux : 08:30 / 12:30 / 19:00 (Europe/Paris, +02:00 en juillet).
 
@@ -111,6 +114,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J2 · LinkedIn · Carrousel coût",
+    document: {
+      file: "public/campaign/j2-cost.pdf",
+      title: "Le vrai prix de facturer à la main",
+      thumbnail: "public/campaign/j2-cost-1.png",
+    },
     images: [
       { file: "public/campaign/j2-cost-1.png" },
       { file: "public/campaign/j2-cost-2.png" },
@@ -277,6 +285,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J3 · LinkedIn · Carrousel idées reçues",
+    document: {
+      file: "public/campaign/j3-myths.pdf",
+      title: "Ce qu'on croit (à tort) sur ses factures",
+      thumbnail: "public/campaign/j3-myths-1.png",
+    },
     images: [
       { file: "public/campaign/j3-myths-1.png" },
       { file: "public/campaign/j3-myths-2.png" },
@@ -410,6 +423,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J4 · LinkedIn · Carrousel récap",
+    document: {
+      file: "public/campaign/j4-recap.pdf",
+      title: "Pourquoi les e-commerçants passent à Fatturi",
+      thumbnail: "public/campaign/j4-recap-1.png",
+    },
     images: [
       { file: "public/campaign/j4-recap-1.png" },
       { file: "public/campaign/j4-recap-2.png" },
@@ -539,6 +557,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J5 · LinkedIn · Carrousel concerné",
+    document: {
+      file: "public/campaign/j5-concerned.pdf",
+      title: "Concerné par la facturation électronique, ou pas ?",
+      thumbnail: "public/campaign/j5-concerned-1.png",
+    },
     images: [
       { file: "public/campaign/j5-concerned-1.png" },
       { file: "public/campaign/j5-concerned-2.png" },
@@ -706,6 +729,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J6 · LinkedIn · Carrousel canaux",
+    document: {
+      file: "public/campaign/j6-channels.pdf",
+      title: "3 façons de vendre en ligne, 3 réponses face à la réforme",
+      thumbnail: "public/campaign/j6-channels-1.png",
+    },
     images: [
       { file: "public/campaign/j6-channels-1.png" },
       { file: "public/campaign/j6-channels-2.png" },
@@ -870,6 +898,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J7 · LinkedIn · Carrousel objections",
+    document: {
+      file: "public/campaign/j7-objections.pdf",
+      title: "Les idées reçues sur la facture électronique (et la réalité)",
+      thumbnail: "public/campaign/j7-objections-1.png",
+    },
     images: [
       { file: "public/campaign/j7-objections-1.png" },
       { file: "public/campaign/j7-objections-2.png" },
@@ -1035,6 +1068,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J8 · LinkedIn · Carrousel calendrier (réutilisation J5)",
+    document: {
+      file: "public/campaign/j5-concerned.pdf",
+      title: "Le calendrier de la réforme, en clair",
+      thumbnail: "public/campaign/j5-concerned-1.png",
+    },
     images: [
       { file: "public/campaign/j5-concerned-1.png" },
       { file: "public/campaign/j5-concerned-2.png" },
@@ -1202,6 +1240,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J9 · LinkedIn · Carrousel coût (réutilisation J2)",
+    document: {
+      file: "public/campaign/j2-cost.pdf",
+      title: "« Ça coûte combien ? » La mauvaise question",
+      thumbnail: "public/campaign/j2-cost-1.png",
+    },
     images: [
       { file: "public/campaign/j2-cost-1.png" },
       { file: "public/campaign/j2-cost-2.png" },
@@ -1364,6 +1407,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J10 · LinkedIn · Carrousel récap (réutilisation J4)",
+    document: {
+      file: "public/campaign/j4-recap.pdf",
+      title: "Ce qui change quand vous arrêtez de facturer à la main",
+      thumbnail: "public/campaign/j4-recap-1.png",
+    },
     images: [
       { file: "public/campaign/j4-recap-1.png" },
       { file: "public/campaign/j4-recap-2.png" },
@@ -1527,6 +1575,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J11 · LinkedIn · Carrousel B2C",
+    document: {
+      file: "public/campaign/j11-b2c.pdf",
+      title: "Clients particuliers : ce qui change vraiment avec la réforme",
+      thumbnail: "public/campaign/j11-b2c-1.png",
+    },
     images: [
       { file: "public/campaign/j11-b2c-1.png" },
       { file: "public/campaign/j11-b2c-2.png" },
@@ -1687,6 +1740,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J12 · LinkedIn · Carrousel réception",
+    document: {
+      file: "public/campaign/j12-receive.pdf",
+      title: "Réception 2026 : ce qu'il faut savoir",
+      thumbnail: "public/campaign/j12-receive-1.png",
+    },
     images: [
       { file: "public/campaign/j12-receive-1.png" },
       { file: "public/campaign/j12-receive-2.png" },
@@ -1848,6 +1906,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J13 · LinkedIn · Carrousel coût",
+    document: {
+      file: "public/campaign/j13-cost.pdf",
+      title: "« Ça coûte combien ? » La mauvaise question",
+      thumbnail: "public/campaign/j13-cost-1.png",
+    },
     images: [
       { file: "public/campaign/j13-cost-1.png" },
       { file: "public/campaign/j13-cost-2.png" },
@@ -2002,6 +2065,11 @@ Encaissé aujourd'hui, facturé aussitôt.
     time: "19:00",
     channel: "page",
     label: "J14 · LinkedIn · Carrousel sécurité",
+    document: {
+      file: "public/campaign/j14-security.pdf",
+      title: "Sécurité des factures électroniques : le vrai du faux",
+      thumbnail: "public/campaign/j14-security-1.png",
+    },
     images: [
       { file: "public/campaign/j14-security-1.png" },
       { file: "public/campaign/j14-security-2.png" },

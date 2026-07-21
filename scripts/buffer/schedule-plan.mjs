@@ -90,6 +90,19 @@ if (!posts.length) {
 }
 
 const buildAssets = (post) => {
+  // LinkedIn : un vrai carrousel swipeable = document PDF (pas multi-images → grille).
+  // Buffer DocumentAssetInput exige url + title + thumbnailUrl.
+  if (post.document) {
+    return [
+      {
+        document: {
+          url: fileToUrl(post.document.file),
+          title: post.document.title,
+          thumbnailUrl: fileToUrl(post.document.thumbnail),
+        },
+      },
+    ];
+  }
   if (post.video) {
     // Buffer refuse les miniatures vidéo personnalisées (thumbnailUrl) : le réseau
     // utilise la 1re image de la vidéo. Nos reels portent leur cover en frame 0,
@@ -99,6 +112,13 @@ const buildAssets = (post) => {
   if (post.images) return post.images.map((img) => ({ image: { url: fileToUrl(img.file) } }));
   if (post.image) return [{ image: { url: fileToUrl(post.image.file) } }];
   return [];
+};
+
+const formatAsset = (a) => {
+  if (a.document) return `📄 ${a.document.url}`;
+  if (a.video) return `🎬 ${a.video.url}`;
+  if (a.image) return `🖼️  ${a.image.url}`;
+  return JSON.stringify(a);
 };
 
 const buildInput = (post) => {
@@ -153,7 +173,7 @@ if (args.edit) {
     const { input } = buildInput(post);
     delete input.channelId; // EditPostInput n'accepte pas channelId
     const editInput = { id: postId, ...input };
-    const media = editInput.assets.map((a) => (a.video ? `🎬 ${a.video.url}` : `🖼️  ${a.image.url}`)).join("\n              ");
+    const media = editInput.assets.map(formatAsset).join("\n              ");
     console.log(`─── ${key} → ${postId} ───`);
     console.log(`  Média : ${media}`);
     if (!willSend) {
@@ -189,7 +209,7 @@ for (const post of posts) {
   }
   const { channel, dueAt, input } = built;
   const media = input.assets.length
-    ? input.assets.map((a) => (a.video ? `🎬 ${a.video.url}` : `🖼️  ${a.image.url}`)).join("\n              ")
+    ? input.assets.map(formatAsset).join("\n              ")
     : "aucun (texte seul)";
 
   console.log(`─── ${post.key} ───────────────────────────────`);

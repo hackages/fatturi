@@ -15,7 +15,8 @@
     "buffer:publish": "node scripts/buffer/publish.mjs",
     "buffer:plan": "node scripts/buffer/schedule-plan.mjs",
     "drive:reels": "node scripts/drive/upload-reels.mjs",
-    "render:campaign": "node scripts/render-campaign.mjs"
+    "render:campaign": "node scripts/render-campaign.mjs",
+    "render:carousel-pdfs": "node scripts/campaign/build-carousel-pdfs.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.484",
@@ -24,6 +25,7 @@
     "googleapis": "^173.0.0",
     "gray-matter": "^4.0.3",
     "next": "16.2.10",
+    "pdf-lib": "^1.17.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
