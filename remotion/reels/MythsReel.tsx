@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoC
 import { COLORS } from "../brand";
 import { playfair, dmSans } from "../fonts";
 import { CtaScene, Caption, Overline, ReelShell, Watermark, COVER_HOLD, fadeScene } from "./shared";
+import { AudioBed } from "./audioBed";
 
 export const MYTHS_DURATION = COVER_HOLD + 456;
 
@@ -98,22 +99,25 @@ const MythFlip: React.FC<{ n: number; myth: string; reality: string }> = ({ n, m
   );
 };
 
-export const MythsReel: React.FC = () => (
-  <ReelShell cover={{ kicker: "Idées reçues", title: "Ce qu'on croit (à tort) sur la facturation." }}>
-    <Sequence durationInFrames={66}>
-      <Hook />
-    </Sequence>
-    <Sequence from={66} durationInFrames={102}>
-      <MythFlip n={1} myth="« Facturer, ça prend 2 minutes. »" reality="× 300 ventes = 20 h par mois, à la main." />
-    </Sequence>
-    <Sequence from={168} durationInFrames={102}>
-      <MythFlip n={2} myth="« La réforme 2026, c'est pour les grandes entreprises. »" reality="Toutes les entreprises à la TVA sont concernées." />
-    </Sequence>
-    <Sequence from={270} durationInFrames={102}>
-      <MythFlip n={3} myth="« Automatiser sa facturation, c'est compliqué. »" reality="Stripe, PayPal, Shopify : branchés en quelques clics." />
-    </Sequence>
-    <Sequence from={372} durationInFrames={84}>
-      <CtaScene />
-    </Sequence>
-  </ReelShell>
+export const MythsReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }) => (
+  <AbsoluteFill>
+    <AudioBed withBgm={withBgm} voFile="campaign/audio/j3-vo.mp3" />
+    <ReelShell cover={{ kicker: "Idées reçues", title: "Ce qu'on croit (à tort) sur la facturation." }}>
+      <Sequence durationInFrames={66}>
+        <Hook />
+      </Sequence>
+      <Sequence from={66} durationInFrames={102}>
+        <MythFlip n={1} myth="« Facturer, ça prend 2 minutes. »" reality="× 300 ventes = 20 h par mois, à la main." />
+      </Sequence>
+      <Sequence from={168} durationInFrames={102}>
+        <MythFlip n={2} myth="« La réforme 2026, c'est pour les grandes entreprises. »" reality="Toutes les entreprises à la TVA sont concernées." />
+      </Sequence>
+      <Sequence from={270} durationInFrames={102}>
+        <MythFlip n={3} myth="« Automatiser sa facturation, c'est compliqué. »" reality="Stripe, PayPal, Shopify : branchés en quelques clics." />
+      </Sequence>
+      <Sequence from={372} durationInFrames={84}>
+        <CtaScene />
+      </Sequence>
+    </ReelShell>
+  </AbsoluteFill>
 );

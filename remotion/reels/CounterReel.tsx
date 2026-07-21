@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoC
 import { COLORS } from "../brand";
 import { playfair, dmSans } from "../fonts";
 import { CtaScene, Caption, Overline, ReelShell, Watermark, COVER_HOLD, fadeScene } from "./shared";
+import { AudioBed } from "./audioBed";
 
 export const COUNTER_DURATION = COVER_HOLD + 432;
 
@@ -102,19 +103,25 @@ const Turn: React.FC = () => {
   );
 };
 
-export const CounterReel: React.FC = () => (
-  <ReelShell cover={{ kicker: "Le coût caché", title: "Le temps que vos factures vous coûtent." }}>
-    <Sequence durationInFrames={84}>
-      <Hook />
-    </Sequence>
-    <Sequence from={84} durationInFrames={186}>
-      <Counter />
-    </Sequence>
-    <Sequence from={270} durationInFrames={78}>
-      <Turn />
-    </Sequence>
-    <Sequence from={348} durationInFrames={84}>
-      <CtaScene />
-    </Sequence>
-  </ReelShell>
+export const CounterReel: React.FC<{ withBgm?: boolean; voFile?: string }> = ({
+  withBgm = true,
+  voFile = "campaign/audio/j2-vo.mp3",
+}) => (
+  <AbsoluteFill>
+    <AudioBed withBgm={withBgm} voFile={voFile} />
+    <ReelShell cover={{ kicker: "Le coût caché", title: "Le temps que vos factures vous coûtent." }}>
+      <Sequence durationInFrames={84}>
+        <Hook />
+      </Sequence>
+      <Sequence from={84} durationInFrames={186}>
+        <Counter />
+      </Sequence>
+      <Sequence from={270} durationInFrames={78}>
+        <Turn />
+      </Sequence>
+      <Sequence from={348} durationInFrames={84}>
+        <CtaScene />
+      </Sequence>
+    </ReelShell>
+  </AbsoluteFill>
 );

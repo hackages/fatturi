@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoC
 import { COLORS } from "../brand";
 import { playfair, dmSans } from "../fonts";
 import { CtaScene, Caption, Overline, ReelShell, Watermark, COVER_HOLD, fadeScene } from "./shared";
+import { AudioBed } from "./audioBed";
 
 export const CHANNELS_DURATION = COVER_HOLD + 444;
 
@@ -104,40 +105,43 @@ const ChannelScene: React.FC<{ n: number; kicker: string; title: string; body: s
   );
 };
 
-export const ChannelsReel: React.FC = () => (
-  <ReelShell cover={{ kicker: "Vendre en ligne", title: "Qui facture, selon ton canal ?" }}>
-    <Sequence durationInFrames={72}>
-      <Hook />
-    </Sequence>
-    <Sequence from={72} durationInFrames={96}>
-      <ChannelScene
-        n={1}
-        kicker="Clients particuliers"
-        title="B2C = e-reporting"
-        body="Pas de facture électronique, mais les données de tes encaissements sont transmises."
-        caption="Vendre à des particuliers reste concerné."
-      />
-    </Sequence>
-    <Sequence from={168} durationInFrames={96}>
-      <ChannelScene
-        n={2}
-        kicker="Marketplaces"
-        title="Amazon, Uber, Vinted…"
-        body="La plateforme peut facturer, mais ton e-reporting et tes ventes hors plateforme restent à toi."
-        caption="La plateforme ne fait pas tout."
-      />
-    </Sequence>
-    <Sequence from={264} durationInFrames={96}>
-      <ChannelScene
-        n={3}
-        kicker="Vente directe"
-        title="Stripe · PayPal · Shopify"
-        body="Chaque encaissement devient une facture conforme, prête pour le e-reporting."
-        caption="C'est là que Fatturi automatise tout."
-      />
-    </Sequence>
-    <Sequence from={360} durationInFrames={84}>
-      <CtaScene />
-    </Sequence>
-  </ReelShell>
+export const ChannelsReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }) => (
+  <AbsoluteFill>
+    <AudioBed withBgm={withBgm} voFile="campaign/audio/j6-vo.mp3" />
+    <ReelShell cover={{ kicker: "Vendre en ligne", title: "Qui facture, selon ton canal ?" }}>
+      <Sequence durationInFrames={72}>
+        <Hook />
+      </Sequence>
+      <Sequence from={72} durationInFrames={96}>
+        <ChannelScene
+          n={1}
+          kicker="Clients particuliers"
+          title="B2C = e-reporting"
+          body="Pas de facture électronique, mais les données de tes encaissements sont transmises."
+          caption="Vendre à des particuliers reste concerné."
+        />
+      </Sequence>
+      <Sequence from={168} durationInFrames={96}>
+        <ChannelScene
+          n={2}
+          kicker="Marketplaces"
+          title="Amazon, Uber, Vinted…"
+          body="La plateforme peut facturer, mais ton e-reporting et tes ventes hors plateforme restent à toi."
+          caption="La plateforme ne fait pas tout."
+        />
+      </Sequence>
+      <Sequence from={264} durationInFrames={96}>
+        <ChannelScene
+          n={3}
+          kicker="Vente directe"
+          title="Stripe · PayPal · Shopify"
+          body="Chaque encaissement devient une facture conforme, prête pour le e-reporting."
+          caption="C'est là que Fatturi automatise tout."
+        />
+      </Sequence>
+      <Sequence from={360} durationInFrames={84}>
+        <CtaScene />
+      </Sequence>
+    </ReelShell>
+  </AbsoluteFill>
 );

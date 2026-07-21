@@ -1,0 +1,26 @@
+---
+description: Always publish new campaign media to Google Drive (DRIVE_FOLDER_ID)
+alwaysApply: true
+---
+
+# Campaign assets → Google Drive (mandatory)
+
+Whenever you **create, regenerate, or finalize** campaign media (reels, videos, carousels, cards, audio beds) under `public/campaign/`:
+
+1. **You MUST upload them to Google Drive** before considering the task done.
+2. Use `DRIVE_FOLDER_ID` + the service account from `.env.local` (`GOOGLE_SERVICE_ACCOUNT_KEY_FILE`).
+3. Prefer `node scripts/drive/publish-day.mjs --day=JNN --send` (or the equivalent upsert helpers in `scripts/drive/`).
+4. Upload **both** reel variants when audio exists:
+   - `VO + musique` (Buffer-ready)
+   - `VO seule` (client adds trendy music)
+5. Put assets in a clear day folder at Drive root, e.g.  
+   `J12 · 2026-07-21 · Recevoir dès 2026/`  
+   with human-readable names (see `VIDEO_LABELS` / publish script). Do **not** leave new files only on disk or only on GitHub CDN.
+6. Buffer scheduling is separate — Drive publish is required even if Buffer is skipped.
+7. Dry-run first if unsure, then `--send`. Confirm links in the reply to the user.
+
+## Do not
+
+- Finish a campaign media task with “files are in `public/campaign/`” only.
+- Upload only one audio variant when both were produced.
+- Put secrets or service-account JSON in the repo or Drive.

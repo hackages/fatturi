@@ -144,6 +144,95 @@ export const DECKS: Record<string, Slide[]> = {
     },
   ],
 
+  // ───────── J12 · Recevoir dès 2026 ─────────
+  receive: [
+    { kind: "cover", kicker: "Réception 2026", title: "Tu penses avoir jusqu'en 2027…" },
+    {
+      kind: "myth",
+      myth: "« J'émets en 2027, je peux attendre. »",
+      reality: "La réception, elle, est obligatoire dès le 1er sept. 2026 — pour toutes les entreprises.",
+    },
+    {
+      kind: "point",
+      n: 1,
+      kicker: "Qui ?",
+      title: "Tout le monde",
+      body: "Micro, auto-entrepreneur, franchise en base de TVA : inclus, sans exception.",
+    },
+    {
+      kind: "point",
+      n: 2,
+      kicker: "Pourquoi ?",
+      title: "Un fournisseur suffit",
+      body: "Dès qu'un de tes fournisseurs envoie en électronique, tu dois pouvoir recevoir.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi te prépare dès maintenant.",
+      body: "Branchez vos paiements ; la réception 2026 ne sera pas une surprise.",
+    },
+  ],
+
+  // ───────── J13 · Coût (v2 — angle abonnement) ─────────
+  "cost-v2": [
+    { kind: "cover", kicker: "Le vrai coût", title: "« Je paierai pas un abonnement. »" },
+    {
+      kind: "stat",
+      kicker: "À la main",
+      big: "20 h",
+      unit: "par mois",
+      body: "C'est ce que coûte déjà la facture « gratuite » faite à la main (300 ventes).",
+    },
+    {
+      kind: "point",
+      n: 1,
+      kicker: "Portail public",
+      title: "Gratuit = minimum",
+      body: "Le portail de l'État couvre le strict nécessaire — pas l'automatisation de vos paiements.",
+    },
+    {
+      kind: "point",
+      n: 2,
+      kicker: "La bonne question",
+      title: "Combien coûte de ne rien changer ?",
+      body: "Temps, erreurs, charge mentale : le poste le plus cher n'est pas l'outil.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi remet le compteur à 0.",
+      body: "Chaque vente devient une facture — sans y passer vos soirées.",
+    },
+  ],
+
+  // ───────── J14 · Sécurité PDP ─────────
+  security: [
+    { kind: "cover", kicker: "Sécurité", title: "Et si la plateforme se fait pirater ?" },
+    {
+      kind: "myth",
+      myth: "« Ces plateformes vont fuiter nos données. »",
+      reality: "Les PDP sont agréées par l'État : chiffrement et exigences de sécurité obligatoires.",
+    },
+    {
+      kind: "point",
+      n: 1,
+      kicker: "PDP",
+      title: "Pas un SaaS au hasard",
+      body: "Plateforme de dématérialisation partenaire = circuit officiel de la réforme.",
+    },
+    {
+      kind: "point",
+      n: 2,
+      kicker: "Confiance",
+      title: "Cadre légal anti-fraude",
+      body: "L'e-reporting existe pour comparer encaissements et déclarations — c'est le design du dispositif.",
+    },
+    {
+      kind: "cta",
+      title: "Fatturi s'appuie sur une PDP agréée.",
+      body: "Tes factures partent au bon format, dans un cadre sécurisé.",
+    },
+  ],
+
   // ───────── J11 · Clients particuliers / B2C ─────────
   b2c: [
     { kind: "cover", kicker: "Clients particuliers", title: "Je ne facture que des particuliers…" },

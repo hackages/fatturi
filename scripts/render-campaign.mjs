@@ -1,5 +1,5 @@
-// Rendu de tous les assets J2–J4 vers public/campaign/.
-// Usage: node scripts/render-campaign.mjs [reels|carousels|cards|all]
+// Rendu des assets campagne → public/campaign/
+// Usage: node scripts/render-campaign.mjs [reels|carousels|cards|all] [j12 j13…]
 import { execFileSync } from "node:child_process";
 import { mkdirSync } from "node:fs";
 
@@ -13,7 +13,14 @@ const run = (args) => {
 };
 
 const still = (comp, file, props) =>
-  run(["still", ENTRY, comp, `${OUT}/${file}`, "--image-format=png", ...(props ? [`--props=${JSON.stringify(props)}`] : [])]);
+  run([
+    "still",
+    ENTRY,
+    comp,
+    `${OUT}/${file}`,
+    "--image-format=png",
+    ...(props ? [`--props=${JSON.stringify(props)}`] : []),
+  ]);
 
 const video = (comp, file) => run(["render", ENTRY, comp, `${OUT}/${file}`]);
 
@@ -25,6 +32,9 @@ const CAROUSELS = {
   "j6-channels": "channels",
   "j7-objections": "objections",
   "j11-b2c": "b2c",
+  "j12-receive": "receive",
+  "j13-cost": "cost-v2",
+  "j14-security": "security",
 };
 
 const CARDS = {
@@ -33,9 +43,12 @@ const CARDS = {
   "card-autoentrepreneur": "autoentrepreneur",
   "card-pdp-security": "pdp-security",
   "card-b2c-ereporting": "b2c-ereporting",
+  "card-receive-2026": "receive-2026",
+  "card-cost-truth": "cost-truth",
+  "card-pdp-trust": "pdp-trust",
 };
 
-// [id de composition, base du fichier de sortie] — 9:16 (IG/TikTok) + 4:5 (LinkedIn).
+// [composition id, output base] — renders 9:16 + 4:5 + VO-only twins
 const REELS = [
   ["J2-CounterReel", "j2-counter"],
   ["J3-MythsReel", "j3-myths"],
@@ -44,10 +57,11 @@ const REELS = [
   ["J6-ChannelsReel", "j6-channels"],
   ["J7-FormatReel", "j7-format"],
   ["J11-B2cReel", "j11-b2c"],
+  ["J12-ReceiveReel", "j12-receive"],
+  ["J13-CostReel", "j13-cost"],
+  ["J14-SecurityReel", "j14-security"],
 ];
 
-// Filtre optionnel par jour(s) : `... reels j5 j6` ne rend que ce qui commence
-// par « j5 »/« j6 ». Sans filtre, tout est rendu.
 const DAY_FILTERS = process.argv.slice(3).map((s) => s.toLowerCase());
 const keep = (base) =>
   DAY_FILTERS.length === 0 || DAY_FILTERS.some((d) => base.toLowerCase().includes(d));
@@ -55,12 +69,13 @@ const keep = (base) =>
 function renderReels() {
   for (const [comp, base] of REELS) {
     if (!keep(base)) continue;
-    // 9:16 pour Instagram (Reels) + TikTok
     video(comp, `${base}-reel.mp4`);
     still(comp, `${base}-thumb.png`, undefined);
-    // 4:5 pour LinkedIn (remplit le fil)
     video(`${comp}-LI`, `${base}-reel-li.mp4`);
     still(`${comp}-LI`, `${base}-thumb-li.png`, undefined);
+    // VO seule (client ajoute musique tendance) — Drive obligatoire
+    video(`${comp}-VoOnly`, `${base}-reel-vo.mp4`);
+    video(`${comp}-VoOnly-LI`, `${base}-reel-vo-li.mp4`);
   }
 }
 
@@ -74,8 +89,14 @@ function renderCarousels() {
 }
 
 function renderCards() {
-  // Cartes = stills rapides ; on les rend toutes (noms non préfixés par jour).
+  const dayCards = {
+    j12: ["card-receive-2026"],
+    j13: ["card-cost-truth"],
+    j14: ["card-pdp-trust"],
+  };
+  const wanted = DAY_FILTERS.flatMap((d) => dayCards[d] || []);
   for (const [file, id] of Object.entries(CARDS)) {
+    if (wanted.length && !wanted.includes(file)) continue;
     still("Card", `${file}.png`, { id });
   }
 }

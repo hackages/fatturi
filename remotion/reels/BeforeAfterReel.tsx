@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoC
 import { COLORS } from "../brand";
 import { playfair, dmSans } from "../fonts";
 import { CtaScene, Caption, Overline, ReelShell, Watermark, COVER_HOLD, fadeScene } from "./shared";
+import { AudioBed } from "./audioBed";
 
 export const BEFOREAFTER_DURATION = COVER_HOLD + 414;
 
@@ -109,19 +110,22 @@ const After: React.FC = () => {
   );
 };
 
-export const BeforeAfterReel: React.FC = () => (
-  <ReelShell cover={{ kicker: "Avant / Après", title: "Votre facturation, avant et après Fatturi." }}>
-    <Sequence durationInFrames={72}>
-      <Hook />
-    </Sequence>
-    <Sequence from={72} durationInFrames={138}>
-      <Before />
-    </Sequence>
-    <Sequence from={210} durationInFrames={120}>
-      <After />
-    </Sequence>
-    <Sequence from={330} durationInFrames={84}>
-      <CtaScene />
-    </Sequence>
-  </ReelShell>
+export const BeforeAfterReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }) => (
+  <AbsoluteFill>
+    <AudioBed withBgm={withBgm} voFile="campaign/audio/j4-vo.mp3" />
+    <ReelShell cover={{ kicker: "Avant / Après", title: "Votre facturation, avant et après Fatturi." }}>
+      <Sequence durationInFrames={72}>
+        <Hook />
+      </Sequence>
+      <Sequence from={72} durationInFrames={138}>
+        <Before />
+      </Sequence>
+      <Sequence from={210} durationInFrames={120}>
+        <After />
+      </Sequence>
+      <Sequence from={330} durationInFrames={84}>
+        <CtaScene />
+      </Sequence>
+    </ReelShell>
+  </AbsoluteFill>
 );

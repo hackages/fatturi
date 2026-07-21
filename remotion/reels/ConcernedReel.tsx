@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoC
 import { COLORS } from "../brand";
 import { playfair, dmSans } from "../fonts";
 import { CtaScene, Caption, Overline, ReelShell, Watermark, COVER_HOLD, fadeScene } from "./shared";
+import { AudioBed } from "./audioBed";
 
 export const CONCERNED_DURATION = COVER_HOLD + 378;
 
@@ -110,31 +111,34 @@ const Milestone: React.FC<{ year: string; label: string; title: string; caption:
   );
 };
 
-export const ConcernedReel: React.FC = () => (
-  <ReelShell cover={{ kicker: "Suis-je concerné ?", title: "La réforme 2026 vous concerne aussi." }}>
-    <Sequence durationInFrames={78}>
-      <Hook />
-    </Sequence>
-    <Sequence from={78} durationInFrames={108}>
-      <Milestone
-        year="2026"
-        label="Réception"
-        title="Recevoir en électronique"
-        who="Toutes les entreprises, dès le 1er sept."
-        caption="Même micro, même sans TVA : obligatoire pour tous."
-      />
-    </Sequence>
-    <Sequence from={186} durationInFrames={108}>
-      <Milestone
-        year="2027"
-        label="Émission"
-        title="Émettre vos factures B2B"
-        who="TPE, micro & auto-entrepreneurs, dès le 1er sept."
-        caption="Le montant de votre CA n'y change rien."
-      />
-    </Sequence>
-    <Sequence from={294} durationInFrames={84}>
-      <CtaScene />
-    </Sequence>
-  </ReelShell>
+export const ConcernedReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }) => (
+  <AbsoluteFill>
+    <AudioBed withBgm={withBgm} voFile="campaign/audio/j5-vo.mp3" />
+    <ReelShell cover={{ kicker: "Suis-je concerné ?", title: "La réforme 2026 vous concerne aussi." }}>
+      <Sequence durationInFrames={78}>
+        <Hook />
+      </Sequence>
+      <Sequence from={78} durationInFrames={108}>
+        <Milestone
+          year="2026"
+          label="Réception"
+          title="Recevoir en électronique"
+          who="Toutes les entreprises, dès le 1er sept."
+          caption="Même micro, même sans TVA : obligatoire pour tous."
+        />
+      </Sequence>
+      <Sequence from={186} durationInFrames={108}>
+        <Milestone
+          year="2027"
+          label="Émission"
+          title="Émettre vos factures B2B"
+          who="TPE, micro & auto-entrepreneurs, dès le 1er sept."
+          caption="Le montant de votre CA n'y change rien."
+        />
+      </Sequence>
+      <Sequence from={294} durationInFrames={84}>
+        <CtaScene />
+      </Sequence>
+    </ReelShell>
+  </AbsoluteFill>
 );

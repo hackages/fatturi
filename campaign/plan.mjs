@@ -49,6 +49,12 @@ export const VIDEO_LABELS = {
   "j7-format-reel.mp4": "J7 · PDF ≠ e-facture — Reel (Instagram · TikTok, 9:16)",
   "j11-b2c-reel-li.mp4": "J11 · Clients particuliers / B2C — Vidéo (LinkedIn 4:5, VO + musique)",
   "j11-b2c-reel.mp4": "J11 · Clients particuliers / B2C — Reel (Instagram · TikTok, 9:16, VO + musique)",
+  "j12-receive-reel-li.mp4": "J12 · Recevoir dès 2026 — Vidéo (LinkedIn 4:5, VO + musique)",
+  "j12-receive-reel.mp4": "J12 · Recevoir dès 2026 — Reel (Instagram · TikTok, 9:16, VO + musique)",
+  "j13-cost-reel-li.mp4": "J13 · Combien ça coûte — Vidéo (LinkedIn 4:5, VO + musique)",
+  "j13-cost-reel.mp4": "J13 · Combien ça coûte — Reel (Instagram · TikTok, 9:16, VO + musique)",
+  "j14-security-reel-li.mp4": "J14 · Sécurité PDP — Vidéo (LinkedIn 4:5, VO + musique)",
+  "j14-security-reel.mp4": "J14 · Sécurité PDP — Reel (Instagram · TikTok, 9:16, VO + musique)",
   "j1-screen-demo.mp4": "Concept · Démo produit (Instagram · TikTok, 9:16)",
 };
 
@@ -1630,6 +1636,477 @@ Accès prioritaire → fatturi.com`,
 Tu branches tes paiements une fois — Fatturi centralise et prépare tes données.
 
 Encaissé le matin, facturé avant midi.
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J12 · Recevoir dès 2026 ───────────────────────
+  {
+    key: "j12-li-text",
+    day: "2026-07-21",
+    time: "08:30",
+    channel: "page",
+    label: "J12 · LinkedIn · Post texte (réception 2026)",
+    text: withTags(
+      `« J'émets mes factures en 2027 — je peux attendre. » Pas pour tout.
+
+Dès le 1er septembre 2026, TOUTES les entreprises doivent pouvoir RECEVOIR une facture électronique. Micro, auto-entrepreneur, franchise en base de TVA : sans exception.
+
+Pourquoi si tôt ? Parce qu'il suffit qu'un seul de vos fournisseurs bascule pour que vous soyez concerné. L'émission peut attendre 2027 pour les TPE ; la réception, non.
+
+Fatturi vous prépare dès maintenant : paiements branchés, factures prêtes, zéro panique le jour J.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j12-li-video",
+    day: "2026-07-21",
+    time: "12:30",
+    channel: "page",
+    label: "J12 · LinkedIn · Vidéo réception (VO + musique)",
+    video: { file: "public/campaign/j12-receive-reel-li.mp4", thumbnail: "public/campaign/j12-receive-thumb-li.png" },
+    text: withTags(
+      `Tu penses avoir jusqu'en 2027… sauf pour la réception. 👇
+
+Dès septembre 2026, toutes les entreprises doivent pouvoir recevoir en électronique.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j12-li-carousel",
+    day: "2026-07-21",
+    time: "19:00",
+    channel: "page",
+    label: "J12 · LinkedIn · Carrousel réception",
+    images: [
+      { file: "public/campaign/j12-receive-1.png" },
+      { file: "public/campaign/j12-receive-2.png" },
+      { file: "public/campaign/j12-receive-3.png" },
+      { file: "public/campaign/j12-receive-4.png" },
+      { file: "public/campaign/j12-receive-5.png" },
+    ],
+    text: withTags(
+      `Réception 2026 : ce qu'il faut savoir. 🔗
+
+Faites glisser pour démêler émission vs réception — et pourquoi attendre coûte cher.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j12-ig-carousel",
+    day: "2026-07-21",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J12 · Instagram · Carrousel réception",
+    images: [
+      { file: "public/campaign/j12-receive-1.png" },
+      { file: "public/campaign/j12-receive-2.png" },
+      { file: "public/campaign/j12-receive-3.png" },
+      { file: "public/campaign/j12-receive-4.png" },
+      { file: "public/campaign/j12-receive-5.png" },
+    ],
+    text: withTags(
+      `Tu penses avoir jusqu'en 2027 ? 📅
+
+Sauf pour la réception — dès sept. 2026. Swipe 👉
+
+Fatturi te prépare dès maintenant.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j12-ig-reel",
+    day: "2026-07-21",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J12 · Instagram · Reel réception (VO + musique)",
+    video: { file: "public/campaign/j12-receive-reel.mp4", thumbnail: "public/campaign/j12-receive-thumb.png" },
+    text: withTags(
+      `POV : tu crois avoir jusqu'en 2027… 👀
+
+La réception, c'est dès 2026. Pour tout le monde.
+
+Fatturi te prépare. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j12-ig-card",
+    day: "2026-07-21",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J12 · Instagram · Card réception",
+    image: { file: "public/campaign/card-receive-2026.png" },
+    text: withTags(
+      `Dès septembre 2026. 📌
+
+Recevoir une facture électronique : obligatoire pour toutes les entreprises.
+
+Prends de l'avance avec Fatturi.
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j12-tt-reel",
+    day: "2026-07-21",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J12 · TikTok · Reel réception (VO + musique)",
+    video: { file: "public/campaign/j12-receive-reel.mp4", thumbnail: "public/campaign/j12-receive-thumb.png" },
+    text: withTags(
+      `POV : tu penses avoir jusqu'en 2027… sauf pour la réception. 😬
+
+Dès sept. 2026, tout le monde doit pouvoir recevoir.
+
+Fatturi s'en occupe. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j12-tt-reel-concept",
+    day: "2026-07-21",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J12 · TikTok · Reel concept",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Prêt pour la réception 2026 sans y penser. 🔗
+
+Tu branches tes paiements une fois — Fatturi fait le reste.
+
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J13 · Combien ça coûte ───────────────────────
+  {
+    key: "j13-li-text",
+    day: "2026-07-22",
+    time: "08:30",
+    channel: "page",
+    label: "J13 · LinkedIn · Post texte (coût)",
+    text: withTags(
+      `« Je ne paierai pas un abonnement pour faire mes factures. »
+
+On comprend. Alors posons les vrais chiffres.
+
+Facturer à la main pour 300 ventes/mois, c'est ~20 heures. Sans compter les erreurs et la charge mentale.
+
+Le portail public reste gratuit pour le strict minimum — mais il n'automatise rien : chaque facture reste à faire.
+
+La vraie question n'est pas « combien coûte l'outil ? » mais « combien coûte de continuer comme avant ? ».
+
+Fatturi remet ce compteur à 0.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j13-li-video",
+    day: "2026-07-22",
+    time: "12:30",
+    channel: "page",
+    label: "J13 · LinkedIn · Vidéo coût (VO + musique)",
+    video: { file: "public/campaign/j13-cost-reel-li.mp4", thumbnail: "public/campaign/j13-cost-thumb-li.png" },
+    text: withTags(
+      `Le vrai coût de la facturation, ce n'est pas l'abonnement. 👇
+
+Ce sont les 20 heures par mois à la main. On fait le calcul.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j13-li-carousel",
+    day: "2026-07-22",
+    time: "19:00",
+    channel: "page",
+    label: "J13 · LinkedIn · Carrousel coût",
+    images: [
+      { file: "public/campaign/j13-cost-1.png" },
+      { file: "public/campaign/j13-cost-2.png" },
+      { file: "public/campaign/j13-cost-3.png" },
+      { file: "public/campaign/j13-cost-4.png" },
+      { file: "public/campaign/j13-cost-5.png" },
+    ],
+    text: withTags(
+      `« Ça coûte combien ? » La mauvaise question. 🔗
+
+Faites glisser pour le vrai calcul — temps vs outil vs portail public.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j13-ig-carousel",
+    day: "2026-07-22",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J13 · Instagram · Carrousel coût",
+    images: [
+      { file: "public/campaign/j13-cost-1.png" },
+      { file: "public/campaign/j13-cost-2.png" },
+      { file: "public/campaign/j13-cost-3.png" },
+      { file: "public/campaign/j13-cost-4.png" },
+      { file: "public/campaign/j13-cost-5.png" },
+    ],
+    text: withTags(
+      `« Je paierai pas un abonnement. » 💸
+
+Ok — mais à la main tu paies déjà 20 h/mois. Swipe 👉
+
+Fatturi remet le compteur à 0.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j13-ig-reel",
+    day: "2026-07-22",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J13 · Instagram · Reel coût (VO + musique)",
+    video: { file: "public/campaign/j13-cost-reel.mp4", thumbnail: "public/campaign/j13-cost-thumb.png" },
+    text: withTags(
+      `20 heures par mois. C'est le prix de la facture « gratuite ». ⏱️
+
+Fatturi : compteur à 0. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j13-ig-card",
+    day: "2026-07-22",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J13 · Instagram · Card coût",
+    image: { file: "public/campaign/card-cost-truth.png" },
+    text: withTags(
+      `Ce n'est pas l'abonnement. 📌
+
+Ce sont les 20 h/mois à la main. Fatturi remet le compteur à 0.
+
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j13-tt-reel",
+    day: "2026-07-22",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J13 · TikTok · Reel coût (VO + musique)",
+    video: { file: "public/campaign/j13-cost-reel.mp4", thumbnail: "public/campaign/j13-cost-thumb.png" },
+    text: withTags(
+      `« Je paierai pas un abonnement »… mais à la main tu paies 20 h/mois. 😤
+
+Le vrai calcul. Fatturi = 0. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j13-tt-reel-concept",
+    day: "2026-07-22",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J13 · TikTok · Reel concept",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Zéro saisie. Zéro abonnement mental. 🔗
+
+Chaque vente → une facture automatique.
+
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+
+  // ─────────────────────── J14 · Sécurité PDP ───────────────────────
+  {
+    key: "j14-li-text",
+    day: "2026-07-23",
+    time: "08:30",
+    channel: "page",
+    label: "J14 · LinkedIn · Post texte (sécurité)",
+    text: withTags(
+      `« Ces plateformes vont se faire pirater — je n'ai aucune confiance. »
+
+C'est l'objection la plus fréquente. Et elle mérite une réponse claire.
+
+Les plateformes de dématérialisation partenaires (PDP) sont agréées par l'État. Elles doivent respecter des exigences de sécurité et de chiffrement : ce n'est pas un SaaS improvisé.
+
+Le cadre de la réforme (e-facture + e-reporting) existe aussi pour lutter contre la fraude. Vos données transitent dans un circuit officiel, pas dans un outil opaque.
+
+Fatturi s'appuie sur une PDP agréée : vos factures partent au bon format, dans un cadre sécurisé.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j14-li-video",
+    day: "2026-07-23",
+    time: "12:30",
+    channel: "page",
+    label: "J14 · LinkedIn · Vidéo sécurité (VO + musique)",
+    video: { file: "public/campaign/j14-security-reel-li.mp4", thumbnail: "public/campaign/j14-security-thumb-li.png" },
+    text: withTags(
+      `Et si la plateforme se fait pirater ? 👇
+
+PDP agréée par l'État, chiffrement, cadre légal. On clarifie en 20 secondes.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j14-li-carousel",
+    day: "2026-07-23",
+    time: "19:00",
+    channel: "page",
+    label: "J14 · LinkedIn · Carrousel sécurité",
+    images: [
+      { file: "public/campaign/j14-security-1.png" },
+      { file: "public/campaign/j14-security-2.png" },
+      { file: "public/campaign/j14-security-3.png" },
+      { file: "public/campaign/j14-security-4.png" },
+      { file: "public/campaign/j14-security-5.png" },
+    ],
+    text: withTags(
+      `Sécurité des factures électroniques : le vrai du faux. 🔗
+
+Faites glisser pour comprendre ce qu'est une PDP agréée — et le rôle de Fatturi.
+
+Encaissé aujourd'hui, facturé aussitôt.
+
+👉 Accès prioritaire (réponse sous 48h) : fatturi.com`,
+      TAGS_LI
+    ),
+  },
+  {
+    key: "j14-ig-carousel",
+    day: "2026-07-23",
+    time: "08:30",
+    channel: "instagram",
+    igType: "post",
+    label: "J14 · Instagram · Carrousel sécurité",
+    images: [
+      { file: "public/campaign/j14-security-1.png" },
+      { file: "public/campaign/j14-security-2.png" },
+      { file: "public/campaign/j14-security-3.png" },
+      { file: "public/campaign/j14-security-4.png" },
+      { file: "public/campaign/j14-security-5.png" },
+    ],
+    text: withTags(
+      `« Et si ça fuit ? » 🔒
+
+Les PDP sont agréées par l'État. Swipe pour le détail 👉
+
+Fatturi s'appuie sur ce cadre.`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j14-ig-reel",
+    day: "2026-07-23",
+    time: "12:30",
+    channel: "instagram",
+    igType: "reel",
+    label: "J14 · Instagram · Reel sécurité (VO + musique)",
+    video: { file: "public/campaign/j14-security-reel.mp4", thumbnail: "public/campaign/j14-security-thumb.png" },
+    text: withTags(
+      `Et si la plateforme se fait pirater ? 👀
+
+PDP agréée = pas un outil au hasard.
+
+Fatturi s'appuie dessus. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j14-ig-card",
+    day: "2026-07-23",
+    time: "19:00",
+    channel: "instagram",
+    igType: "post",
+    label: "J14 · Instagram · Card confiance",
+    image: { file: "public/campaign/card-pdp-trust.png" },
+    text: withTags(
+      `Agréée par l'État. 🔒
+
+Chiffrement, sécurité, circuit officiel. Fatturi s'appuie sur une PDP agréée.
+
+Accès prioritaire → fatturi.com`,
+      TAGS_IG
+    ),
+  },
+  {
+    key: "j14-tt-reel",
+    day: "2026-07-23",
+    time: "12:30",
+    channel: "tiktok",
+    label: "J14 · TikTok · Reel sécurité (VO + musique)",
+    video: { file: "public/campaign/j14-security-reel.mp4", thumbnail: "public/campaign/j14-security-thumb.png" },
+    text: withTags(
+      `« Ces plateformes vont se faire pirater » — et la réalité. 🔒
+
+PDP agréée par l'État. Je t'explique.
+
+Fatturi s'en occupe. 🔗
+Accès prioritaire → fatturi.com`,
+      TAGS_TT
+    ),
+  },
+  {
+    key: "j14-tt-reel-concept",
+    day: "2026-07-23",
+    time: "19:00",
+    channel: "tiktok",
+    label: "J14 · TikTok · Reel concept",
+    video: { file: "public/campaign/j1-screen-demo.mp4", thumbnail: "public/campaign/j1-thumbnail.png" },
+    text: withTags(
+      `Conformité sécurisée, sans y penser. 🔗
+
+Tes factures partent via une PDP agréée.
+
 Accès prioritaire → fatturi.com`,
       TAGS_TT
     ),

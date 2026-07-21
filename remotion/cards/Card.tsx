@@ -42,6 +42,24 @@ export const CARDS: Record<string, CardData> = {
     quote: "B2C ≠ hors réforme.",
     sub: "Pas de facture électronique vers un particulier — mais le e-reporting de tes encaissements, oui.",
   },
+  "receive-2026": {
+    kind: "quote",
+    kicker: "Réception",
+    quote: "Dès septembre 2026.",
+    sub: "Toutes les entreprises doivent pouvoir recevoir une facture électronique — même si vous émettez en 2027.",
+  },
+  "cost-truth": {
+    kind: "quote",
+    kicker: "Le vrai coût",
+    quote: "Ce n'est pas l'abonnement.",
+    sub: "Ce sont les 20 heures par mois passées à facturer à la main. Fatturi remet le compteur à 0.",
+  },
+  "pdp-trust": {
+    kind: "quote",
+    kicker: "Confiance",
+    quote: "Agréée par l'État.",
+    sub: "Les PDP sont certifiées : chiffrement et sécurité obligatoires. Fatturi s'appuie sur ce cadre.",
+  },
 };
 
 const Bg: React.FC = () => (

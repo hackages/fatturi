@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence, interpolate, spring, useCurrentFrame, useVideoC
 import { COLORS } from "../brand";
 import { playfair, dmSans } from "../fonts";
 import { CtaScene, Caption, Overline, ReelShell, Watermark, COVER_HOLD, fadeScene } from "./shared";
+import { AudioBed } from "./audioBed";
 
 export const FORMAT_DURATION = COVER_HOLD + 348;
 
@@ -122,16 +123,19 @@ const Compare: React.FC = () => {
   );
 };
 
-export const FormatReel: React.FC = () => (
-  <ReelShell cover={{ kicker: "PDF ≠ e-facture", title: "Un PDF par email n'est pas une facture électronique." }}>
-    <Sequence durationInFrames={84}>
-      <Hook />
-    </Sequence>
-    <Sequence from={84} durationInFrames={180}>
-      <Compare />
-    </Sequence>
-    <Sequence from={264} durationInFrames={84}>
-      <CtaScene />
-    </Sequence>
-  </ReelShell>
+export const FormatReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }) => (
+  <AbsoluteFill>
+    <AudioBed withBgm={withBgm} voFile="campaign/audio/j7-vo.mp3" />
+    <ReelShell cover={{ kicker: "PDF ≠ e-facture", title: "Un PDF par email n'est pas une facture électronique." }}>
+      <Sequence durationInFrames={84}>
+        <Hook />
+      </Sequence>
+      <Sequence from={84} durationInFrames={180}>
+        <Compare />
+      </Sequence>
+      <Sequence from={264} durationInFrames={84}>
+        <CtaScene />
+      </Sequence>
+    </ReelShell>
+  </AbsoluteFill>
 );
