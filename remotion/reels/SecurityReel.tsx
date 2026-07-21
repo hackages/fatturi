@@ -69,9 +69,9 @@ export const SecurityReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }
       </Sequence>
       <Sequence from={90} durationInFrames={108}>
         <Beat
-          kicker="PDP"
+          kicker="PA"
           title="Certifiée, pas au hasard"
-          body="Les plateformes de dématérialisation partenaires sont agréées par l'État."
+          body="Les plateformes agréées (PA) sont validées par l'État."
           caption="Exigences de sécurité et de chiffrement."
         />
       </Sequence>
@@ -80,7 +80,7 @@ export const SecurityReel: React.FC<{ withBgm?: boolean }> = ({ withBgm = true }
           kicker="Tes données"
           title="Protégées par le cadre légal"
           body="Ce n'est pas un SaaS improvisé : c'est le circuit officiel de la réforme."
-          caption="Fatturi s'appuie sur une PDP agréée."
+          caption="Fatturi s'appuie sur une PA agréée."
         />
       </Sequence>
       <Sequence from={306} durationInFrames={90}>

@@ -42,7 +42,7 @@ export const REEL_VO = {
   },
   j14: {
     file: "j14-vo",
-    text: "Et si la plateforme se fait pirater ? Les plateformes agréées sont certifiées par l'État : chiffrement, exigences de sécurité. Ce n'est pas un outil au hasard. Fatturi s'appuie sur une PDP agréée. Tes données restent protégées.",
+    text: "Et si la plateforme se fait pirater ? Les plateformes agréées sont certifiées par l'État : chiffrement, exigences de sécurité. Ce n'est pas un outil au hasard. Fatturi s'appuie sur une PA agréée. Tes données restent protégées.",
   },
 };
 

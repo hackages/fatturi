@@ -1,0 +1,23 @@
+---
+description: Never write PDP — always use PA (plateforme agréée)
+alwaysApply: true
+---
+
+# Terminology: PA, never PDP
+
+In **all** Fatturi copy (blog, social captions, Remotion slides/reels, Drive memos, SEO docs):
+
+- **Never** write `PDP` or `pdp` as the product/platform term.
+- **Always** write **`PA`** (plateforme agréée).
+
+## Examples
+
+```text
+❌ Fatturi s'appuie sur une PDP agréée.
+✅ Fatturi s'appuie sur une PA agréée.
+
+❌ plateforme de dématérialisation partenaire (PDP)
+✅ plateforme agréée (PA)
+```
+
+When regenerating or editing campaign assets that still say PDP, replace with PA and re-render / re-upload affected media.

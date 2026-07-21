@@ -58,7 +58,7 @@ export const CARDS: Record<string, CardData> = {
     kind: "quote",
     kicker: "Confiance",
     quote: "Agréée par l'État.",
-    sub: "Les PDP sont certifiées : chiffrement et sécurité obligatoires. Fatturi s'appuie sur ce cadre.",
+    sub: "Les PA sont certifiées : chiffrement et sécurité obligatoires. Fatturi s'appuie sur ce cadre.",
   },
 };
 

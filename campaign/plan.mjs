@@ -53,8 +53,8 @@ export const VIDEO_LABELS = {
   "j12-receive-reel.mp4": "J12 · Recevoir dès 2026 — Reel (Instagram · TikTok, 9:16, VO + musique)",
   "j13-cost-reel-li.mp4": "J13 · Combien ça coûte — Vidéo (LinkedIn 4:5, VO + musique)",
   "j13-cost-reel.mp4": "J13 · Combien ça coûte — Reel (Instagram · TikTok, 9:16, VO + musique)",
-  "j14-security-reel-li.mp4": "J14 · Sécurité PDP — Vidéo (LinkedIn 4:5, VO + musique)",
-  "j14-security-reel.mp4": "J14 · Sécurité PDP — Reel (Instagram · TikTok, 9:16, VO + musique)",
+  "j14-security-reel-li.mp4": "J14 · Sécurité PA — Vidéo (LinkedIn 4:5, VO + musique)",
+  "j14-security-reel.mp4": "J14 · Sécurité PA — Reel (Instagram · TikTok, 9:16, VO + musique)",
   "j1-screen-demo.mp4": "Concept · Démo produit (Instagram · TikTok, 9:16)",
 };
 
@@ -1954,7 +1954,7 @@ Accès prioritaire → fatturi.com`,
     ),
   },
 
-  // ─────────────────────── J14 · Sécurité PDP ───────────────────────
+  // ─────────────────────── J14 · Sécurité PA ───────────────────────
   {
     key: "j14-li-text",
     day: "2026-07-23",
@@ -1966,11 +1966,11 @@ Accès prioritaire → fatturi.com`,
 
 C'est l'objection la plus fréquente. Et elle mérite une réponse claire.
 
-Les plateformes de dématérialisation partenaires (PDP) sont agréées par l'État. Elles doivent respecter des exigences de sécurité et de chiffrement : ce n'est pas un SaaS improvisé.
+Les plateformes de dématérialisation partenaires (PA) sont agréées par l'État. Elles doivent respecter des exigences de sécurité et de chiffrement : ce n'est pas un SaaS improvisé.
 
 Le cadre de la réforme (e-facture + e-reporting) existe aussi pour lutter contre la fraude. Vos données transitent dans un circuit officiel, pas dans un outil opaque.
 
-Fatturi s'appuie sur une PDP agréée : vos factures partent au bon format, dans un cadre sécurisé.
+Fatturi s'appuie sur une PA agréée : vos factures partent au bon format, dans un cadre sécurisé.
 
 Encaissé aujourd'hui, facturé aussitôt.
 
@@ -1988,7 +1988,7 @@ Encaissé aujourd'hui, facturé aussitôt.
     text: withTags(
       `Et si la plateforme se fait pirater ? 👇
 
-PDP agréée par l'État, chiffrement, cadre légal. On clarifie en 20 secondes.
+PA agréée par l'État, chiffrement, cadre légal. On clarifie en 20 secondes.
 
 Encaissé aujourd'hui, facturé aussitôt.
 
@@ -2012,7 +2012,7 @@ Encaissé aujourd'hui, facturé aussitôt.
     text: withTags(
       `Sécurité des factures électroniques : le vrai du faux. 🔗
 
-Faites glisser pour comprendre ce qu'est une PDP agréée — et le rôle de Fatturi.
+Faites glisser pour comprendre ce qu'est une PA agréée — et le rôle de Fatturi.
 
 Encaissé aujourd'hui, facturé aussitôt.
 
@@ -2037,7 +2037,7 @@ Encaissé aujourd'hui, facturé aussitôt.
     text: withTags(
       `« Et si ça fuit ? » 🔒
 
-Les PDP sont agréées par l'État. Swipe pour le détail 👉
+Les PA sont agréées par l'État. Swipe pour le détail 👉
 
 Fatturi s'appuie sur ce cadre.`,
       TAGS_IG
@@ -2054,7 +2054,7 @@ Fatturi s'appuie sur ce cadre.`,
     text: withTags(
       `Et si la plateforme se fait pirater ? 👀
 
-PDP agréée = pas un outil au hasard.
+PA agréée = pas un outil au hasard.
 
 Fatturi s'appuie dessus. 🔗
 Accès prioritaire → fatturi.com`,
@@ -2072,7 +2072,7 @@ Accès prioritaire → fatturi.com`,
     text: withTags(
       `Agréée par l'État. 🔒
 
-Chiffrement, sécurité, circuit officiel. Fatturi s'appuie sur une PDP agréée.
+Chiffrement, sécurité, circuit officiel. Fatturi s'appuie sur une PA agréée.
 
 Accès prioritaire → fatturi.com`,
       TAGS_IG
@@ -2088,7 +2088,7 @@ Accès prioritaire → fatturi.com`,
     text: withTags(
       `« Ces plateformes vont se faire pirater » — et la réalité. 🔒
 
-PDP agréée par l'État. Je t'explique.
+PA agréée par l'État. Je t'explique.
 
 Fatturi s'en occupe. 🔗
 Accès prioritaire → fatturi.com`,
@@ -2105,7 +2105,7 @@ Accès prioritaire → fatturi.com`,
     text: withTags(
       `Conformité sécurisée, sans y penser. 🔗
 
-Tes factures partent via une PDP agréée.
+Tes factures partent via une PA agréée.
 
 Accès prioritaire → fatturi.com`,
       TAGS_TT

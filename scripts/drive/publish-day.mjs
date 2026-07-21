@@ -74,7 +74,7 @@ const DAYS = {
     ],
   },
   j14: {
-    folder: "J14 · 2026-07-23 · Sécurité PDP",
+    folder: "J14 · 2026-07-23 · Sécurité PA",
     files: [
       ["public/campaign/j14-security-reel.mp4", "j14-security-reel-with-music.mp4", "J14 · Sécurité — Reel 9:16 (VO + musique)"],
       ["public/campaign/j14-security-reel-vo.mp4", "j14-security-reel-vo-only.mp4", "J14 · Sécurité — Reel 9:16 (VO seule · musique tendance)"],
@@ -85,7 +85,7 @@ const DAYS = {
       ["public/campaign/j14-security-3.png", "j14-security-3.png", "J14 · Carrousel — 3"],
       ["public/campaign/j14-security-4.png", "j14-security-4.png", "J14 · Carrousel — 4"],
       ["public/campaign/j14-security-5.png", "j14-security-5.png", "J14 · Carrousel — 5"],
-      ["public/campaign/card-pdp-trust.png", "card-pdp-trust.png", "J14 · Card confiance PDP"],
+      ["public/campaign/card-pdp-trust.png", "card-pdp-trust.png", "J14 · Card confiance PA"],
     ],
   },
   // Legacy reels re-voiced (archive folder per day key)

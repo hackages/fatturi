@@ -15,3 +15,9 @@ node scripts/drive/publish-day.mjs --day=jNN --send
 
 Upload both `VO + musique` and `VO seule` reel variants. See `.cursor/rules/campaign-drive-publish.mdc`.
 <!-- END:campaign-drive -->
+
+<!-- BEGIN:pa-terminology -->
+# Terminology: PA, never PDP
+
+Never write `PDP` in user-facing copy. Always use **`PA`** (plateforme agréée). See `.cursor/rules/pa-not-pdp.mdc`.
+<!-- END:pa-terminology -->

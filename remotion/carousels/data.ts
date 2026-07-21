@@ -204,20 +204,20 @@ export const DECKS: Record<string, Slide[]> = {
     },
   ],
 
-  // ───────── J14 · Sécurité PDP ─────────
+  // ───────── J14 · Sécurité PA ─────────
   security: [
     { kind: "cover", kicker: "Sécurité", title: "Et si la plateforme se fait pirater ?" },
     {
       kind: "myth",
       myth: "« Ces plateformes vont fuiter nos données. »",
-      reality: "Les PDP sont agréées par l'État : chiffrement et exigences de sécurité obligatoires.",
+      reality: "Les PA sont agréées par l'État : chiffrement et exigences de sécurité obligatoires.",
     },
     {
       kind: "point",
       n: 1,
-      kicker: "PDP",
+      kicker: "PA",
       title: "Pas un SaaS au hasard",
-      body: "Plateforme de dématérialisation partenaire = circuit officiel de la réforme.",
+      body: "Plateforme agréée (PA) = circuit officiel de la réforme.",
     },
     {
       kind: "point",
@@ -228,7 +228,7 @@ export const DECKS: Record<string, Slide[]> = {
     },
     {
       kind: "cta",
-      title: "Fatturi s'appuie sur une PDP agréée.",
+      title: "Fatturi s'appuie sur une PA agréée.",
       body: "Tes factures partent au bon format, dans un cadre sécurisé.",
     },
   ],
